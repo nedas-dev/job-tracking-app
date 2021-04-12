@@ -1,0 +1,23 @@
+{
+  "name": "jobtrackingproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w static/scss/ -o static/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nedas-dev/job-tracking-app.git"
+  },
+  "author": "Nedas Snarskis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nedas-dev/job-tracking-app/issues"
+  },
+  "homepage": "https://github.com/nedas-dev/job-tracking-app#readme",
+  "dependencies": {
+    "node-js": "^1.0.0",
+    "node-sass": "^5.0.0"
+  }
+}
