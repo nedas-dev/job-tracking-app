@@ -10,15 +10,22 @@
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <div class="menu">
-            <div id="logo" class="item"><a href="{% url 'index' %}">JobTracker</a></div>
-            <div id="login" class="item"><a href="{% url 'login' %}">Login</a></div>
-            <div id="register" class="item"><a href="{% url 'register' %}">Register</a></div>
+            <div id="logo" class="item"><a href="{% url 'index' %}">Job<span>Tracker</span></a></div>
+            {% if request.user.is_authenticated %}
+                <div id="logout" class="item"><a href="{% url 'logout' %}">Logout</a></div>
+            {% else %}
+                <div id="login" class="item"><a href="{% url 'login' %}">Login</a></div>
+                <div id="register" class="item"><a href="{% url 'register' %}">Register</a></div>
+            {% endif %}
         </div>
     </nav>
-    {% block content %}
-    {% endblock content%}
+
+    <main id="content">
+        {% block content %}
+        {% endblock content%}
+    </main>
 </body>
 
 </html>

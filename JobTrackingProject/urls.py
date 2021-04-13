@@ -23,7 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("JobTrackingApp.urls")),
     path("userAuth/", include("django.contrib.auth.urls")),
-    path("register/", userViews.register, name="register"),
+    path("userAuth/register/", userViews.register, name="register"),
 ]
 
 if settings.DEBUG:

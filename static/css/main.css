@@ -1,2 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+nav#navbar {
+  background-color: #8963ba;
+  padding: 20px 10px 20px 10px;
+  font-family: 'Balsamiq Sans', cursive;
+  color: white; }
+  nav#navbar div.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    nav#navbar div.menu a, nav#navbar div.menu a:visited {
+      text-decoration: none;
+      color: inherit; }
+    nav#navbar div.menu div#logo {
+      color: #f4a5ae;
+      flex: 2;
+      text-align: start;
+      padding-left: 5%; }
+      nav#navbar div.menu div#logo:hover {
+        animation: changeColors 2s forwards; }
+      nav#navbar div.menu div#logo span {
+        color: #b1e5f2; }
+
+@keyframes changeColors {
+  50% {
+    color: white; }
+  100% {
+    color: #f4a5ae; } }
+    nav#navbar div.menu div#login, nav#navbar div.menu div#register, nav#navbar div.menu div#logout {
+      flex: 1;
+      text-align: center; }
+    nav#navbar div.menu div#login a:hover, nav#navbar div.menu div#logout a:hover, nav#navbar div.menu div#register a:hover {
+      color: #b1e5f2;
+      cursor: pointer; }
+
 body {
-  background-color: snow; }
+  margin: 0px;
+  padding: 0px;
+  background-color: white; }
+  body main {
+    padding: 5px;
+    width: 85%;
+    margin: auto;
+    background-color: green; }

@@ -1,0 +1,46 @@
+$special-blue: rgb(177, 229, 242);
+$special-pink: rgb(244, 165, 174);
+$special-purple: rgb(137, 99, 186);
+nav#navbar{
+    background-color: $special-purple;
+    padding: 20px 10px 20px 10px;
+    font-family: 'Balsamiq Sans', cursive;
+    color: white;
+    div.menu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        a, a:visited{
+            text-decoration: none;
+            color: inherit;
+        }
+        div#logo{
+            color: $special-pink;
+            flex: 2;
+            text-align: start;
+            padding-left: 5%;
+            &:hover{
+                animation: changeColors 2s forwards;
+            }
+            span{
+                color: $special-blue;
+            }
+            @keyframes changeColors {
+                50%{
+                    color: white;
+                }
+                100%{
+                    color: $special-pink;
+                }
+            }
+        }
+        div#login, div#register, div#logout{
+            flex: 1;
+            text-align: center;
+        }
+        div#login a:hover, div#logout a:hover, div#register a:hover{
+            color: $special-blue;
+            cursor: pointer;
+        }
+    }
+}
