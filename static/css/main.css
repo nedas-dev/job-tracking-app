@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 nav#navbar {
-  background-color: #8963ba;
+  background-color: #393838;
   padding: 20px 10px 20px 10px;
   font-family: 'Balsamiq Sans', cursive;
   color: white; }
@@ -11,6 +11,32 @@ nav#navbar {
     nav#navbar div.menu a, nav#navbar div.menu a:visited {
       text-decoration: none;
       color: inherit; }
+    nav#navbar div.menu div#sidebar-icon {
+      width: 20px;
+      height: 15px;
+      margin-left: 5px;
+      cursor: pointer; }
+      nav#navbar div.menu div#sidebar-icon span.side-bar-container {
+        width: inherit;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
+        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar {
+          height: 3px;
+          width: 100%;
+          background-color: #b1e5f2;
+          border-radius: 3px;
+          transition: all 0.3s ease-in-out; }
+        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar1 {
+          transform: translateY(4px) rotate(45deg); }
+        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar2 {
+          visibility: hidden;
+          transition: visibility 0.1s; }
+        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar3 {
+          transform: translateY(-8px) rotate(-45deg); }
+      nav#navbar div.menu div#sidebar-icon:hover span.side-bar-container div.sidebar {
+        background-color: white; }
     nav#navbar div.menu div#logo {
       color: #f4a5ae;
       flex: 2;
@@ -20,6 +46,8 @@ nav#navbar {
         animation: changeColors 2s forwards; }
       nav#navbar div.menu div#logo span {
         color: #b1e5f2; }
+      nav#navbar div.menu div#logo img#clock {
+        width: 15px; }
 
 @keyframes changeColors {
   50% {
@@ -33,10 +61,20 @@ nav#navbar {
       color: #b1e5f2;
       cursor: pointer; }
 
+nav#main-sidebar div.sidebar-container {
+  background-color: #393838;
+  color: white;
+  width: 200px;
+  height: 100vh; }
+  nav#main-sidebar div.sidebar-container ul#sidebar-ul {
+    list-style-type: none;
+    font-size: 16px; }
+
 body {
   margin: 0px;
   padding: 0px;
-  background-color: white; }
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif; }
   body main {
     padding: 5px;
     width: 85%;

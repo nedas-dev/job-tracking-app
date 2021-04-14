@@ -1,6 +1,7 @@
 $special-blue: rgb(177, 229, 242);
 $special-pink: rgb(244, 165, 174);
 $special-purple: rgb(137, 99, 186);
+$special-purple: rgb(57, 56, 56);
 nav#navbar{
     background-color: $special-purple;
     padding: 20px 10px 20px 10px;
@@ -14,6 +15,39 @@ nav#navbar{
             text-decoration: none;
             color: inherit;
         }
+        div#sidebar-icon{
+            width: 20px;
+            height: 15px;
+            margin-left: 5px;
+            cursor: pointer;
+            span.side-bar-container{
+                width: inherit;
+                height: inherit;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                div.sidebar{
+                    height: 3px;
+                    width: 100%;
+                    background-color: $special-blue;
+                    border-radius: 3px;
+                    transition: all 0.3s ease-in-out;
+                }
+                div.sidebar1{
+                    transform: translateY(4px) rotate(45deg);
+                }
+                div.sidebar2{
+                    visibility: hidden;
+                    transition: visibility 0.1s;
+                }
+                div.sidebar3{
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+            }
+            &:hover span.side-bar-container div.sidebar{
+                background-color: white;
+            }
+        }
         div#logo{
             color: $special-pink;
             flex: 2;
@@ -24,6 +58,9 @@ nav#navbar{
             }
             span{
                 color: $special-blue;
+            }
+            img#clock{
+                width: 15px;
             }
             @keyframes changeColors {
                 50%{
@@ -41,6 +78,19 @@ nav#navbar{
         div#login a:hover, div#logout a:hover, div#register a:hover{
             color: $special-blue;
             cursor: pointer;
+        }
+    }
+}
+
+nav#main-sidebar{
+    div.sidebar-container{
+        background-color: $special-purple;
+        color: white;
+        width: 200px;
+        height: 100vh;
+        ul#sidebar-ul{
+            list-style-type: none;
+            font-size: 16px;
         }
     }
 }

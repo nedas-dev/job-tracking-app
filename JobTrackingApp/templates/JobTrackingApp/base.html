@@ -12,7 +12,14 @@
 <body>
     <nav id="navbar">
         <div class="menu">
-            <div id="logo" class="item"><a href="{% url 'index' %}">Job<span>Tracker</span></a></div>
+            <div id="sidebar-icon">
+                <span class="side-bar-container">
+                    <div class="sidebar"></div>
+                    <div class="sidebar"></div>
+                    <div class="sidebar"></div>
+                </span>
+            </div>
+            <div id="logo" class="item"><a href="{% url 'index' %}"><img id="clock" src="{% static 'icons/clocknew.gif'%}"/>Schedule<span>Tracker</span></a></div>
             {% if request.user.is_authenticated %}
                 <div id="logout" class="item"><a href="{% url 'logout' %}">Logout</a></div>
             {% else %}
@@ -22,10 +29,23 @@
         </div>
     </nav>
 
+    <nav id="main-sidebar">
+        <div class="sidebar-container">
+            <ul id="sidebar-ul">
+                <h5> Tracker </h5>
+                <li class="item">Home</li>
+                <h5> Manage </h5>
+                <li class="item">Clients</li>
+            </ul>
+
+        </div>
+    </nav>
+
     <main id="content">
         {% block content %}
         {% endblock content%}
     </main>
+    <script src="{% static 'js/main.js'%}"></script>
 </body>
 
 </html>
