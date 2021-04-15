@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+a, a:visited {
+  text-decoration: none;
+  color: inherit; }
+
+ul {
+  padding: 0px; }
+
 nav#navbar {
   background-color: #393838;
   padding: 20px 10px 20px 10px;
@@ -8,9 +15,6 @@ nav#navbar {
     display: flex;
     flex-direction: row;
     align-items: center; }
-    nav#navbar div.menu a, nav#navbar div.menu a:visited {
-      text-decoration: none;
-      color: inherit; }
     nav#navbar div.menu div#sidebar-icon {
       width: 20px;
       height: 15px;
@@ -62,13 +66,27 @@ nav#navbar {
       cursor: pointer; }
 
 nav#main-sidebar div.sidebar-container {
+  transform: translate(-200px);
   background-color: #393838;
   color: white;
   width: 200px;
-  height: 100vh; }
+  height: 100vh;
+  position: fixed;
+  transition: transform 0.3s ease-in-out; }
   nav#main-sidebar div.sidebar-container ul#sidebar-ul {
     list-style-type: none;
-    font-size: 16px; }
+    list-style-position: outside;
+    font-size: 16px;
+    padding-left: 0px; }
+    nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item {
+      margin-left: 10px;
+      margin: 2rem;
+      padding: 5px;
+      border-radius: 5px; }
+      nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer; }
 
 body {
   margin: 0px;

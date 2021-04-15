@@ -2,6 +2,16 @@ $special-blue: rgb(177, 229, 242);
 $special-pink: rgb(244, 165, 174);
 $special-purple: rgb(137, 99, 186);
 $special-purple: rgb(57, 56, 56);
+
+a, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0px;
+}
+
 nav#navbar{
     background-color: $special-purple;
     padding: 20px 10px 20px 10px;
@@ -11,10 +21,6 @@ nav#navbar{
         display: flex;
         flex-direction: row;
         align-items: center;
-        a, a:visited{
-            text-decoration: none;
-            color: inherit;
-        }
         div#sidebar-icon{
             width: 20px;
             height: 15px;
@@ -84,13 +90,31 @@ nav#navbar{
 
 nav#main-sidebar{
     div.sidebar-container{
+        transform: translate(-200px);
         background-color: $special-purple;
         color: white;
         width: 200px;
         height: 100vh;
+        position: fixed;
+        transition: transform 0.3s ease-in-out;
         ul#sidebar-ul{
             list-style-type: none;
+            list-style-position: outside;
             font-size: 16px;
+            padding-left: 0px;
+            li.item{
+                margin-left: 10px;
+                margin: 2rem;
+                padding: 5px;
+                border-radius: 5px;
+                &:hover{
+                    background-color: white;
+                    color: black;
+                    cursor: pointer;
+                }
+
+
+            }
         }
     }
 }
