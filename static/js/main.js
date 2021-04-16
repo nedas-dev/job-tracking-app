@@ -10,7 +10,6 @@ const mainContent = document.getElementById('content');
 const websiteController = new WebsiteControler();
 
 
-
 const closeSidebar = function () {
     sidebarLines[0].className = 'sidebar';
     sidebarLines[1].className = 'sidebar';
@@ -18,10 +17,6 @@ const closeSidebar = function () {
     sidebarContainer.style.transform = "translate(-200px)";
 
     websiteController.sidebarActive = false
-
-    mainContent.removeEventListener('click', (e) => {
-        closeSidebar()
-    })
 }
 
 const openSidebar = function () {
@@ -32,12 +27,14 @@ const openSidebar = function () {
 
     websiteController.sidebarActive = true
 
+    // { 'once': true} - run event listener given function exactly once and then stop tracking the event (remove event)
     mainContent.addEventListener('click', (e) => {
         closeSidebar()
-    })
+    }, { 'once': true })
 
 }
 
+// This code is responsible for opening and closing sidebar.
 document.getElementById('sidebar-icon').addEventListener('click', (e) => {
     if (websiteController.sidebarActive) {
         closeSidebar()
