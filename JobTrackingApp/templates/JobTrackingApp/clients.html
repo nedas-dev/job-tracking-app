@@ -1,0 +1,27 @@
+{% extends 'JobTrackingApp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="features">
+        <button class="addClient"> Add Client </button>
+    </div>
+    <table id="clientsTable">
+        <tr class="table-header">
+            <th> Client name</th>
+            <th> Phone number</th>
+            <th> Email address </th>
+            <th> Address </th>
+        </tr>
+        {% for client in clientList %}
+            <tr class="table-row">
+                <td> {{ client.name }} </td>
+                <td> {{ client.phone_number }} </td>
+                <td> {{ client.email_address }} </td>
+                <td> {{ client.address }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
+
+{% block javascript %} 
+    <script src="{% static 'js/clients.js' %}"></script>
+{% endblock javascript %}

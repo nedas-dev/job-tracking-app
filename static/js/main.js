@@ -1,4 +1,8 @@
-class WebsiteControler {
+// ---------------------------------------------------------|
+// NAVIGATION BAR / SIDEBAR 
+
+
+class WebsiteController {
     constructor() {
         this.sidebarActive = false
     }
@@ -7,7 +11,7 @@ class WebsiteControler {
 const sidebarLines = document.querySelector('span.side-bar-container').children;
 const sidebarContainer = document.querySelector('div.sidebar-container');
 const mainContent = document.getElementById('content');
-const websiteController = new WebsiteControler();
+const websiteController = new WebsiteController();
 
 
 const closeSidebar = function () {
@@ -43,3 +47,6 @@ document.getElementById('sidebar-icon').addEventListener('click', (e) => {
         openSidebar()
     }
 })
+
+// END|  NAVIGATION BAR / SIDEBAR  |END
+// ---------------------------------------------------------|

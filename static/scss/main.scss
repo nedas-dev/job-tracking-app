@@ -3,12 +3,39 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: white;
+    background-color: rgb(232, 232, 232);
     font-family: Arial, Helvetica, sans-serif;
     main{
         padding: 5px;
         width: 85%;
+        height: 100vh;
         margin: auto;
-        background-color: green;
+        background-color: white;
+        
+        div.features{
+            float: right;
+            button.addClient{
+                margin: 5px;
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+        table#clientsTable{
+            width: 100%;
+            border-collapse: collapse;
+            th{
+                border: 1px solid grey;
+                text-align: center;
+                padding: 5px;
+            }
+
+            td{
+                border: 1px solid grey;
+                text-align: center;
+                padding: 5px;
+            }
+        }
     }
 }

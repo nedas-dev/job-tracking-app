@@ -33,7 +33,7 @@
         <div class="sidebar-container">
             <ul id="sidebar-ul">
                 <li class="item"><a href="{% url 'index' %}">Home</a></li>
-                <li class="item"><a href="{% url 'index' %}">Clients</a></li>
+                <li class="item"><a href="{% url 'clients' %}">Clients</a></li>
                 <li class="item"><a href="{% url 'index' %}">Profile<br/> Settings</a></li>
             </ul>
         </div>
@@ -44,6 +44,7 @@
         {% endblock content%}
     </main>
     <script src="{% static 'js/main.js'%}"></script>
+    {% block javascript %}{% endblock javascript %}
 </body>
 
 </html>

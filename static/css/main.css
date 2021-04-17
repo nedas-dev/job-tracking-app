@@ -91,10 +91,29 @@ nav#main-sidebar div.sidebar-container {
 body {
   margin: 0px;
   padding: 0px;
-  background-color: white;
+  background-color: #e8e8e8;
   font-family: Arial, Helvetica, sans-serif; }
   body main {
     padding: 5px;
     width: 85%;
+    height: 100vh;
     margin: auto;
-    background-color: green; }
+    background-color: white; }
+    body main div.features {
+      float: right; }
+      body main div.features button.addClient {
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer; }
+    body main table#clientsTable {
+      width: 100%;
+      border-collapse: collapse; }
+      body main table#clientsTable th {
+        border: 1px solid grey;
+        text-align: center;
+        padding: 5px; }
+      body main table#clientsTable td {
+        border: 1px solid grey;
+        text-align: center;
+        padding: 5px; }

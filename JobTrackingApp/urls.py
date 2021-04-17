@@ -18,5 +18,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path("", views.index, name="index"),
+    path("clients/", views.clients, name="clients"),
+    path("clients/create-new", views.createClient, name="createClient"),
 ]
