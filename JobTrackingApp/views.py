@@ -16,17 +16,40 @@ def index(request):
 
 @login_required
 def clients(request):
-    clientList = Client.objects.all()
+    clientList = Client.objects.filter(user=request.user)
     if request.method == "GET":
+        form = ClientForm()
+        context = {"clientList": clientList, "form": form}
         return render(
-            request, "JobTrackingApp/clients.html", context={"clientList": clientList}
+            request,
+            "JobTrackingApp/clients.html",
+            context,
         )
     elif request.method == "POST":
-        form = ClientForm(request)
+        form = ClientForm(request.POST)
+
         if form.is_valid():
-            pass
+            data = form.cleaned_data
+            if not clientList.filter(name=data["name"]).exists():
+                client = Client(
+                    user=request.user,
+                    address=data["address"],
+                    name=data["name"],
+                    phone_number=data["phone_number"],
+                    email_address=data["email_address"],
+                )
+                client.save()
+                data["is_valid"] = True
+                data["message"] = "Client was successfully created"
+            else:
+                data = {
+                    "is_valid": False,
+                    "message": "Client already exists",
+                }
+        else:
+            data = {
+                "is_valid": False,
+                "message": "Error: Client was NOT created",
+            }
 
-
-def createClient(request):
-    if request.method == "POST":
-        return JsonResponse({f"hello": f'{request.POST["hello"]}'})
+    return JsonResponse(data)

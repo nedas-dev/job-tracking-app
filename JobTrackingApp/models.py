@@ -1,12 +1,14 @@
 from django.db import models
 from django import forms
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Client(models.Model):
-    name = models.CharField(blank=True, primary_key=True, max_length=100)
-    phone_number = models.CharField(blank=True, max_length=100)
-    address = models.CharField(max_length=300)
-    email_address = models.EmailField(blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(blank=True, max_length=30)
+    address = models.CharField(max_length=60)
+    phone_number = models.CharField(blank=True, max_length=30)
+    email_address = models.EmailField(blank=True, max_length=30)
 
     def __str__(self):
         return f"{self.name}"

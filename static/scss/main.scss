@@ -1,5 +1,36 @@
 @import 'base';
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+.submit{
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(145, 145, 145);
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+    letter-spacing: 2px;
+    border: 2px solid rgb(126, 126, 126);
+    &:hover{
+        color: $special-light-grey;
+        background-color: white;
+    }
+}
+
+.exit{
+    border: 1px solid black;
+    padding: 2px;
+    width: 17px;
+    display: block;
+    border-radius: 50%;
+    background-color: $special-light-grey;
+    &:hover{
+        color: $special-light-grey;
+        background-color: white;
+        cursor: pointer;
+    }
+}
+
 body{
     margin: 0px;
     padding: 0px;
@@ -8,10 +39,48 @@ body{
     main{
         padding: 5px;
         width: 85%;
-        height: 100vh;
+        min-height: 100vh;
         margin: auto;
         background-color: white;
-        
+        position: relative;
+
+        div.createClientDiv{
+            margin:auto;
+            display: none;
+            width: 220px;
+            position: absolute;
+            left: 35%;
+            color: white;
+            form.addClientForm{
+                background-color: $special-pink;
+                width: inherit;
+                border: 1px solid black;
+                text-align: center;
+                border-radius: 5px;
+                padding: 10px;
+                box-shadow: 10px 5px 10px #b66b6b;
+                input{
+                    text-align: center;
+                    padding: 5px;
+                    width: 90%;
+                    &.submit{
+                        margin-top: 1rem;
+                    }
+                }
+                textarea#id_address{
+                    width: 90%;
+                    height: 50px;
+                    resize: none;
+                }
+
+                p.formExit{
+                    position: absolute;
+                    right: -15px;
+                    top: -10px;
+                }
+            }
+        }
+
         div.features{
             float: right;
             button.addClient{
@@ -20,6 +89,7 @@ body{
                 border-radius: 5px;
                 cursor: pointer;
             }
+            margin-right: 1rem;
         }
 
         table#clientsTable{
@@ -28,7 +98,8 @@ body{
             th{
                 border: 1px solid grey;
                 text-align: center;
-                padding: 5px;
+                padding: 10px;
+
             }
 
             td{

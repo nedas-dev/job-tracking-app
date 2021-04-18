@@ -1,7 +1,7 @@
 $special-blue: rgb(177, 229, 242);
-$special-pink: rgb(244, 165, 174);
-$special-purple: rgb(137, 99, 186);
-$special-purple: rgb(57, 56, 56);
+$special-pink: rgb(242, 140, 152);
+$special-grey: rgb(57, 56, 56);
+$special-light-grey:  rgb(145, 145, 145);
 
 a, a:visited{
     text-decoration: none;
@@ -13,7 +13,7 @@ ul {
 }
 
 nav#navbar{
-    background-color: $special-purple;
+    background-color: $special-grey;
     padding: 20px 10px 20px 10px;
     font-family: 'Balsamiq Sans', cursive;
     color: white;
@@ -89,9 +89,11 @@ nav#navbar{
 }
 
 nav#main-sidebar{
+    position: relative;
+    z-index: 1;
     div.sidebar-container{
         transform: translate(-200px);
-        background-color: $special-purple;
+        background-color: $special-grey;
         color: white;
         width: 200px;
         height: 100vh;

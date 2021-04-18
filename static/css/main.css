@@ -42,7 +42,7 @@ nav#navbar {
       nav#navbar div.menu div#sidebar-icon:hover span.side-bar-container div.sidebar {
         background-color: white; }
     nav#navbar div.menu div#logo {
-      color: #f4a5ae;
+      color: #f28c98;
       flex: 2;
       text-align: start;
       padding-left: 5%; }
@@ -57,7 +57,7 @@ nav#navbar {
   50% {
     color: white; }
   100% {
-    color: #f4a5ae; } }
+    color: #f28c98; } }
     nav#navbar div.menu div#login, nav#navbar div.menu div#register, nav#navbar div.menu div#logout {
       flex: 1;
       text-align: center; }
@@ -65,28 +65,57 @@ nav#navbar {
       color: #b1e5f2;
       cursor: pointer; }
 
-nav#main-sidebar div.sidebar-container {
-  transform: translate(-200px);
-  background-color: #393838;
+nav#main-sidebar {
+  position: relative;
+  z-index: 1; }
+  nav#main-sidebar div.sidebar-container {
+    transform: translate(-200px);
+    background-color: #393838;
+    color: white;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    transition: transform 0.3s ease-in-out; }
+    nav#main-sidebar div.sidebar-container ul#sidebar-ul {
+      list-style-type: none;
+      list-style-position: outside;
+      font-size: 16px;
+      padding-left: 0px; }
+      nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item {
+        margin-left: 10px;
+        margin: 2rem;
+        padding: 5px;
+        border-radius: 5px; }
+        nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item:hover {
+          background-color: white;
+          color: black;
+          cursor: pointer; }
+
+.submit {
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #919191;
   color: white;
-  width: 200px;
-  height: 100vh;
-  position: fixed;
-  transition: transform 0.3s ease-in-out; }
-  nav#main-sidebar div.sidebar-container ul#sidebar-ul {
-    list-style-type: none;
-    list-style-position: outside;
-    font-size: 16px;
-    padding-left: 0px; }
-    nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item {
-      margin-left: 10px;
-      margin: 2rem;
-      padding: 5px;
-      border-radius: 5px; }
-      nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item:hover {
-        background-color: white;
-        color: black;
-        cursor: pointer; }
+  font-family: 'Balsamiq Sans', cursive;
+  letter-spacing: 2px;
+  border: 2px solid #7e7e7e; }
+  .submit:hover {
+    color: #919191;
+    background-color: white; }
+
+.exit {
+  border: 1px solid black;
+  padding: 2px;
+  width: 17px;
+  display: block;
+  border-radius: 50%;
+  background-color: #919191; }
+  .exit:hover {
+    color: #919191;
+    background-color: white;
+    cursor: pointer; }
 
 body {
   margin: 0px;
@@ -96,11 +125,42 @@ body {
   body main {
     padding: 5px;
     width: 85%;
-    height: 100vh;
+    min-height: 100vh;
     margin: auto;
-    background-color: white; }
+    background-color: white;
+    position: relative; }
+    body main div.createClientDiv {
+      margin: auto;
+      display: none;
+      width: 220px;
+      position: absolute;
+      left: 35%;
+      color: white; }
+      body main div.createClientDiv form.addClientForm {
+        background-color: #f28c98;
+        width: inherit;
+        border: 1px solid black;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 10px 5px 10px #b66b6b; }
+        body main div.createClientDiv form.addClientForm input {
+          text-align: center;
+          padding: 5px;
+          width: 90%; }
+          body main div.createClientDiv form.addClientForm input.submit {
+            margin-top: 1rem; }
+        body main div.createClientDiv form.addClientForm textarea#id_address {
+          width: 90%;
+          height: 50px;
+          resize: none; }
+        body main div.createClientDiv form.addClientForm p.formExit {
+          position: absolute;
+          right: -15px;
+          top: -10px; }
     body main div.features {
-      float: right; }
+      float: right;
+      margin-right: 1rem; }
       body main div.features button.addClient {
         margin: 5px;
         padding: 5px;
@@ -112,7 +172,7 @@ body {
       body main table#clientsTable th {
         border: 1px solid grey;
         text-align: center;
-        padding: 5px; }
+        padding: 10px; }
       body main table#clientsTable td {
         border: 1px solid grey;
         text-align: center;
