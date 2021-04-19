@@ -1,10 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+.button {
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #919191;
+  color: white;
+  font-family: 'Balsamiq Sans', cursive;
+  letter-spacing: 2px;
+  border: 2px solid #7e7e7e; }
+  .button:hover {
+    color: #919191;
+    background-color: white; }
+  .button:active, .button:focus {
+    outline: none; }
+
+.exit {
+  border: 1px solid #7e7e7e;
+  padding: 2px;
+  width: 17px;
+  display: block;
+  border-radius: 50%;
+  background-color: #919191; }
+  .exit:hover {
+    color: #919191;
+    background-color: white;
+    cursor: pointer; }
+
 a, a:visited {
   text-decoration: none;
   color: inherit; }
 
 ul {
   padding: 0px; }
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #e8e8e8;
+  font-family: Arial, Helvetica, sans-serif; }
 
 nav#navbar {
   background-color: #393838;
@@ -91,89 +125,64 @@ nav#main-sidebar {
           color: black;
           cursor: pointer; }
 
-.submit {
+main {
   padding: 5px;
-  width: 100%;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #919191;
-  color: white;
-  font-family: 'Balsamiq Sans', cursive;
-  letter-spacing: 2px;
-  border: 2px solid #7e7e7e; }
-  .submit:hover {
-    color: #919191;
-    background-color: white; }
+  width: 85%;
+  min-height: 100vh;
+  margin: auto;
+  background-color: white;
+  position: relative; }
 
-.exit {
-  border: 1px solid black;
-  padding: 2px;
-  width: 17px;
-  display: block;
-  border-radius: 50%;
-  background-color: #919191; }
-  .exit:hover {
-    color: #919191;
-    background-color: white;
+main div.createClientDiv {
+  margin: auto;
+  display: none;
+  width: 220px;
+  position: absolute;
+  left: 35%;
+  color: white; }
+  main div.createClientDiv form.addClientForm {
+    background-color: #f28c98;
+    width: inherit;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 10px 5px 10px #b66b6b; }
+    main div.createClientDiv form.addClientForm input {
+      text-align: center;
+      padding: 5px;
+      width: 90%; }
+      main div.createClientDiv form.addClientForm input.submit {
+        margin-top: 1rem; }
+    main div.createClientDiv form.addClientForm textarea#id_address {
+      width: 90%;
+      height: 50px;
+      resize: none; }
+    main div.createClientDiv form.addClientForm p.formExit {
+      position: absolute;
+      right: -15px;
+      top: -10px; }
+
+main div.features {
+  float: right;
+  margin-right: 1rem; }
+  main div.features button.addClient {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
     cursor: pointer; }
 
-body {
-  margin: 0px;
-  padding: 0px;
-  background-color: #e8e8e8;
-  font-family: Arial, Helvetica, sans-serif; }
-  body main {
-    padding: 5px;
-    width: 85%;
-    min-height: 100vh;
-    margin: auto;
-    background-color: white;
-    position: relative; }
-    body main div.createClientDiv {
-      margin: auto;
-      display: none;
-      width: 220px;
-      position: absolute;
-      left: 35%;
-      color: white; }
-      body main div.createClientDiv form.addClientForm {
-        background-color: #f28c98;
-        width: inherit;
-        border: 1px solid black;
-        text-align: center;
-        border-radius: 5px;
-        padding: 10px;
-        box-shadow: 10px 5px 10px #b66b6b; }
-        body main div.createClientDiv form.addClientForm input {
-          text-align: center;
-          padding: 5px;
-          width: 90%; }
-          body main div.createClientDiv form.addClientForm input.submit {
-            margin-top: 1rem; }
-        body main div.createClientDiv form.addClientForm textarea#id_address {
-          width: 90%;
-          height: 50px;
-          resize: none; }
-        body main div.createClientDiv form.addClientForm p.formExit {
-          position: absolute;
-          right: -15px;
-          top: -10px; }
-    body main div.features {
-      float: right;
-      margin-right: 1rem; }
-      body main div.features button.addClient {
-        margin: 5px;
-        padding: 5px;
-        border-radius: 5px;
-        cursor: pointer; }
-    body main table#clientsTable {
-      width: 100%;
-      border-collapse: collapse; }
-      body main table#clientsTable th {
-        border: 1px solid grey;
-        text-align: center;
-        padding: 10px; }
-      body main table#clientsTable td {
-        border: 1px solid grey;
-        text-align: center;
-        padding: 5px; }
+main table#clientsTable {
+  width: 100%;
+  border-collapse: collapse; }
+  main table#clientsTable th {
+    border: 1px solid grey;
+    text-align: center;
+    padding: 10px; }
+  main table#clientsTable td {
+    border: 1px solid grey;
+    text-align: center;
+    padding: 5px; }
+    main table#clientsTable td a {
+      color: #0f17ff;
+      text-decoration: underline; }

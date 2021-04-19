@@ -1,16 +1,21 @@
 {% extends 'JobTrackingApp/base.html' %}
 {% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/clients.css' %}">
+{% endblock css %}
+
 {% block content %}
     <div class="createClientDiv">
         <form class="addClientForm" action='' method='POST'>
             <p class="exit formExit"> x </p>
             {% csrf_token %}
             {{ form.as_p }} 
-            <input class="submit" type="submit" value="Create new client">
+            <input class="button" type="submit" value="Create new client">
         </form>
     </div>
     <div class="features">
-        <button class="addClient submit"> Add Client </button>
+        <button class="addClient button"> Add Client </button>
     </div>
     <table id="clientsTable">
         <tr class="table-header">
@@ -21,7 +26,7 @@
         </tr>
         {% for client in clientList %}
             <tr class="table-row">
-                <td> {{ client.name }} </td>
+                <td class"link"><a class="link" href="{% url 'client-detail' client.pk %}">{{ client.name }}</a></td>
                 <td> {{ client.phone_number }} </td>
                 <td> {{ client.email_address }} </td>
                 <td> {{ client.address }} </td>

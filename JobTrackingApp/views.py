@@ -1,13 +1,12 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
-from . import views
-from .models import Client
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.http import JsonResponse, HttpResponseNotFound
+from . import views
 from .forms import ClientForm
-from django.http import JsonResponse
+from .models import Client
 
 
 def index(request):
@@ -15,8 +14,19 @@ def index(request):
 
 
 @login_required
+def clientDetailView(request, pk):
+    client_detail = Client.objects.filter(user=request.user).filter(pk=pk)
+    if client_detail.exists():
+        form = ClientForm(instance=client_detail[0])
+        context = {"form": form}
+        return render(request, "JobTrackingApp/clientDetailView.html", context)
+    else:
+        return HttpResponseNotFound("404 Page not found")
+
+
+@login_required
 def clients(request):
-    clientList = Client.objects.filter(user=request.user)
+    clientList = Client.objects.filter(user=request.user).order_by("-pk")
     if request.method == "GET":
         form = ClientForm()
         context = {"clientList": clientList, "form": form}

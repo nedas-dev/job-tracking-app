@@ -2,6 +2,43 @@ $special-blue: rgb(177, 229, 242);
 $special-pink: rgb(242, 140, 152);
 $special-grey: rgb(57, 56, 56);
 $special-light-grey:  rgb(145, 145, 145);
+$special-white: rgb(237, 237, 237);
+$special-darker-white:  rgb(223, 223, 223);
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+.button{
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(145, 145, 145);
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+    letter-spacing: 2px;
+    border: 2px solid rgb(126, 126, 126);
+    &:hover{
+        color: $special-light-grey;
+        background-color: white;
+    }
+    &:active, &:focus{
+        outline: none;
+    }
+}
+
+.exit{
+    border: 1px solid rgb(126, 126, 126);
+    padding: 2px;
+    width: 17px;
+    display: block;
+    border-radius: 50%;
+    background-color: $special-light-grey;
+    &:hover{
+        color: $special-light-grey;
+        background-color: white;
+        cursor: pointer;
+    }
+}
 
 a, a:visited{
     text-decoration: none;
@@ -11,6 +48,15 @@ a, a:visited{
 ul {
     padding: 0px;
 }
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(232, 232, 232);
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
 
 nav#navbar{
     background-color: $special-grey;
@@ -119,4 +165,13 @@ nav#main-sidebar{
             }
         }
     }
+}
+
+main{
+    padding: 5px;
+    width: 85%;
+    min-height: 100vh;
+    margin: auto;
+    background-color: white;
+    position: relative;
 }

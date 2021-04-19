@@ -1,0 +1,18 @@
+{% extends 'JobTrackingApp/base.html'%}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/clientDetailView.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <div class="updateClientDiv">
+        <form class="updateClientForm" action='' method='POST'>
+            <p class="header">Update Profile </p>
+            {% csrf_token %}
+            <div class="form">
+                {{ form.as_p }} 
+            </div>
+            <input class="button" type="submit" value="Update">
+        </form>
+    </div>
+{% endblock content %}

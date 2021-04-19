@@ -20,4 +20,5 @@ from . import views
 urlpatterns = [
     path("", views.index, name="index"),
     path("clients/", views.clients, name="clients"),
+    path("clients/<int:pk>/", views.clientDetailView, name="client-detail"),
 ]

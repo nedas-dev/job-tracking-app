@@ -4,7 +4,7 @@ const addClientButton = document.querySelector('button.addClient')
 const clientsTable = document.getElementById('clientsTable');
 const mainBody = document.getElementById('main');
 
-function createClient() {
+function addClient() {
     var formData = new FormData();
     var csrfToken = document.cookie.split('=')[1]
     formData.append('csrfmiddlewaretoken', csrfToken)
@@ -23,14 +23,21 @@ function createClient() {
         if (this.readyState == 4 && this.status == 200) {
             form_data = JSON.parse(xhttp.responseText)
             if (form_data['is_valid'] == true) {
-                var client = `
-                <tr class="table-row">
-                    <td> ${form_data['name']} </td>
-                    <td> ${form_data['phone_number']} </td>
-                    <td> ${form_data['email_address']} </td>
-                    <td> ${form_data['address']} </td>
-                </tr>`
-                clientsTable.innerHTML += client
+                var trHeader = document.querySelector('tr.table-header').nextElementSibling
+                var pk = trHeader.children[0].children[0].href
+                console.log(pk)
+                var result = /\/(\d+)\//.exec(pk)[1]
+                result = parseInt(result) + 1
+                var parentNode = trHeader.parentElement
+                var tr = document.createElement('tr');
+                tr.classname = "table-row";
+                tr.innerHTML = `
+                <td class"link"><a class="link" href="/clients/${result}/">${form_data['name']}</a></td>
+                <td> ${form_data['phone_number']} </td>
+                <td> ${form_data['email_address']} </td>
+                <td> ${form_data['address']} </td>
+                `
+                parentNode.insertBefore(tr, trHeader)
             }
         }
     };
@@ -49,7 +56,7 @@ function clearInputsAddClientForm() {
 addClientForm.addEventListener('submit', (e) => {
     e.preventDefault();
     addClientDiv.style.display = 'None';
-    createClient()
+    addClient()
     clearInputsAddClientForm()
 })
 
