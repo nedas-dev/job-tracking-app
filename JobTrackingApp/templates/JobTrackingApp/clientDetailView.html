@@ -16,3 +16,8 @@
         </form>
     </div>
 {% endblock content %}
+
+{% block javascript %}
+    <script src="{% static 'js/clientDetailView.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFomHEDiF7Z8HJfbTarnXa_dh2d6hw6k0&libraries=places&callback=initAutocomplete"></script>
+{% endblock javascript %}

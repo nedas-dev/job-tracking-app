@@ -136,7 +136,7 @@ main {
 main div.createClientDiv {
   margin: auto;
   display: none;
-  width: 220px;
+  width: 280px;
   position: absolute;
   left: 35%;
   color: black; }
@@ -155,10 +155,6 @@ main div.createClientDiv {
       width: 90%; }
       main div.createClientDiv form.addClientForm input.submit {
         margin-top: 1rem; }
-    main div.createClientDiv form.addClientForm textarea#id_address {
-      width: 90%;
-      height: 50px;
-      resize: none; }
     main div.createClientDiv form.addClientForm p.formExit {
       position: absolute;
       right: -15px;

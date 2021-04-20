@@ -4,7 +4,8 @@ from .models import Client
 
 
 class ClientForm(ModelForm):
-    address = forms.CharField(widget=forms.Textarea())
+    address = forms.CharField()
+    address.widget.attrs.update({"autocomplete": "off"})
     phone_number = forms.CharField(
         required=False, widget=forms.TextInput(attrs={"placeholder": "optional"})
     )
