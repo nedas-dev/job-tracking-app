@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
-ul.errorlist {
+.errorlist {
+  border: 1px solid red;
   padding: 5px;
-  width: 60%;
+  width: 70%;
   text-align: center;
   margin: auto;
-  color: black;
-  list-style-type: square;
-  border: none; }
-  ul.errorlist li {
-    color: red; }
+  list-style: none; }
 
 .button {
   padding: 5px;
@@ -143,52 +140,3 @@ main {
   margin: auto;
   background-color: white;
   position: relative; }
-
-main div.updateClientDiv {
-  box-sizing: border-box;
-  overflow: hidden;
-  margin: 1rem auto 2rem auto;
-  position: relative;
-  max-width: 800px;
-  width: 90%;
-  min-width: 220px;
-  color: black;
-  background-image: linear-gradient(#ededed, #dfdfdf);
-  text-align: center;
-  border-radius: 5px;
-  padding: 30px;
-  box-shadow: 5px 5px 10px #9a9a9a; }
-  main div.updateClientDiv form.updateClientForm {
-    border-radius: 10px; }
-    main div.updateClientDiv form.updateClientForm div.form p.fieldWrapper {
-      text-align: center;
-      display: flex;
-      flex-direction: row;
-      justify-content: start;
-      align-items: center;
-      flex-wrap: nowrap;
-      width: 100%; }
-      main div.updateClientDiv form.updateClientForm div.form p.fieldWrapper label {
-        width: 30%;
-        padding: 5px; }
-      main div.updateClientDiv form.updateClientForm div.form p.fieldWrapper input, main div.updateClientDiv form.updateClientForm div.form p.fieldWrapper textarea {
-        width: 100%;
-        max-width: 400px;
-        padding: 10px;
-        max-height: 100px;
-        min-width: 150px;
-        min-height: 26px; }
-    main div.updateClientDiv form.updateClientForm input.button {
-      max-width: 400px;
-      width: 50%;
-      min-width: 200px;
-      margin-top: 1.4rem; }
-    main div.updateClientDiv form.updateClientForm p.header {
-      font-family: 'Balsamiq Sans', cursive;
-      margin: auto;
-      max-width: 500px;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-      color: black;
-      text-align: center;
-      font-size: 1.2rem; }

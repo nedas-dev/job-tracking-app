@@ -1,9 +1,15 @@
 from django.forms import ModelForm
 from django import forms
 from .models import Client
+from django.core.exceptions import ValidationError
+
+# from django.utils.translation import gettext_lazy as _
 
 
 class ClientForm(ModelForm):
+    name = forms.CharField(
+        error_messages={"invalid": "Client with the same name already exists"}
+    )
     address = forms.CharField()
     address.widget.attrs.update({"autocomplete": "off"})
     phone_number = forms.CharField(

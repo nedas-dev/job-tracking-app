@@ -7,17 +7,13 @@ $special-darker-white:  rgb(223, 223, 223);
 
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
-ul.errorlist{
+.errorlist{
+    border: 1px solid red;
     padding: 5px;
-    width: 60%;
+    width: 70%;
     text-align: center;
     margin: auto;
-    color: black;
-    list-style-type: square;
-    border: none;
-    li{
-        color: red;
-    }
+    list-style: none;
 }
 
 .button{

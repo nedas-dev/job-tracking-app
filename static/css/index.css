@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+ul.errorlist {
+  padding: 5px;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  color: black;
+  list-style-type: square;
+  border: none; }
+  ul.errorlist li {
+    color: red; }
+
 .button {
   padding: 5px;
   width: 100%;

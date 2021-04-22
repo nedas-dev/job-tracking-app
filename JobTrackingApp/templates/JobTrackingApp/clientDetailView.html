@@ -10,7 +10,14 @@
             <p class="header">Update Profile </p>
             {% csrf_token %}
             <div class="form">
-                {{ form.as_p }} 
+                {% for field in form %}
+                    <p class="fieldWrapper">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                        <p class="help">{{ field.help_text|safe }}</p>
+                    </p>
+                {% endfor %}
             </div>
             <input class="button" type="submit" value="Update">
         </form>
