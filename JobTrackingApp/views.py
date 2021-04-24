@@ -47,11 +47,9 @@ def clients(request):
                 data["is_valid"] = True
                 data["message"] = "Client was successfully created"
             else:
-                form.add_error("name", "Client with the same name already exists")
-
                 data = {
                     "is_valid": False,
-                    "message": "Client already exists",
+                    "message": "Client with the same name already exists",
                 }
         else:
             data = {

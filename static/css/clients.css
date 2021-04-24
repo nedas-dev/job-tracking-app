@@ -148,6 +148,8 @@ main div.createClientDiv {
   margin: auto;
   display: none;
   width: 280px;
+  min-width: 240px;
+  max-width: 340px;
   position: absolute;
   left: 35%;
   color: black; }
