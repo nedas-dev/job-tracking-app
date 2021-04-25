@@ -56,10 +56,10 @@ function clearInputsAddClientForm() {
 
 
 addClientForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     addClientDiv.style.display = 'None';
-    addClient()
-    clearInputsAddClientForm()
+    // addClient()
+    // clearInputsAddClientForm()
 })
 
 addClientButton.addEventListener('click', (e) => {
@@ -69,6 +69,14 @@ addClientButton.addEventListener('click', (e) => {
         addClientDiv.style.display = 'None';
     }, { 'once': true })
 })
+
+if (document.querySelector('ul.errorlist')) {
+    addClientDiv.style.display = 'Block';
+    document.querySelector('p.formExit').addEventListener('click', (e) => {
+        clearInputsAddClientForm()
+        addClientDiv.style.display = 'None';
+    }, { 'once': true })
+}
 
 // --------------------------------------------------------------
 // Autocomplete address script for Google Place API

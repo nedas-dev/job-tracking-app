@@ -5,7 +5,10 @@
   width: 70%;
   text-align: center;
   margin: auto;
-  list-style: none; }
+  list-style: none; 
+  font-size: 12px;
+}
+
 
 .button {
   padding: 5px;

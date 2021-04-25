@@ -1,2 +1,4 @@
 my_env/
 node_modules/
+__pycache__/
+*.pyc

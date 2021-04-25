@@ -10,6 +10,7 @@ from . import views
 from .forms import ClientForm
 from .models import Client
 from django.core.exceptions import ValidationError
+from .validations import fix_phone_number
 
 
 def index(request):
@@ -21,43 +22,35 @@ def clients(request):
     clientList = Client.objects.filter(user=request.user).order_by("-pk")
     if request.method == "GET":
         form = ClientForm()
-        context = {
-            "clientList": clientList,
-            "form": form,
-        }
-        return render(
-            request,
-            "JobTrackingApp/clients.html",
-            context,
-        )
     elif request.method == "POST":
         form = ClientForm(request.POST)
 
         if form.is_valid():
             data = form.cleaned_data
             if not clientList.filter(name=data["name"]).exists():
+                phone_number = fix_phone_number(data["phone_number"])
                 client = Client(
                     user=request.user,
                     address=data["address"],
                     name=data["name"],
-                    phone_number=data["phone_number"],
+                    phone_number=phone_number,
                     email_address=data["email_address"],
                 )
                 client.save()
-                data["is_valid"] = True
-                data["message"] = "Client was successfully created"
+                return redirect(reverse("clients"))
             else:
-                data = {
-                    "is_valid": False,
-                    "message": "Client with the same name already exists",
-                }
-        else:
-            data = {
-                "is_valid": False,
-                "message": "Error: Client was NOT created",
-            }
+                form.add_error("name", "Client with the same name already exists")
 
-    return JsonResponse(data)
+    context = {
+        "client_list": clientList,
+        "form": form,
+    }
+
+    return render(
+        request,
+        "JobTrackingApp/clients.html",
+        context,
+    )
 
 
 @login_required

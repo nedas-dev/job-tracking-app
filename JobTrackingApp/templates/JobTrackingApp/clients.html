@@ -10,7 +10,13 @@
         <form class="addClientForm" action='' method='POST'>
             <p class="exit formExit"> x </p>
             {% csrf_token %}
-            {{ form.as_p }} 
+            {% for field in form %}
+                <p> 
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }} 
+                </p>
+            {% endfor %}
             <input class="button" type="submit" value="Create new client">
         </form>
     </div>
@@ -18,20 +24,24 @@
         <button class="addClient button"> Add Client </button>
     </div>
     <table id="clientsTable">
-        <tr class="table-header">
-            <th> Client name</th>
-            <th> Phone number</th>
-            <th> Email address </th>
-            <th> Address </th>
-        </tr>
-        {% for client in clientList %}
-            <tr class="table-row">
-                <td class"link"><a class="link" href="{% url 'client-detail' client.pk %}">{{ client.name }}</a></td>
-                <td> {{ client.phone_number }} </td>
-                <td> {{ client.email_address }} </td>
-                <td> {{ client.address }} </td>
+        {% if client_list %}
+            <tr class="table-header">
+                <th> Client name</th>
+                <th> Phone number</th>
+                <th> Email address </th>
+                <th> Address </th>
             </tr>
-        {% endfor %}
+            {% for client in client_list %}
+                <tr class="table-row">
+                    <td class"link"><a class="link" href="{% url 'client-detail' client.pk %}">{{ client.name }}</a></td>
+                    <td><a href="tel:{{ client.phone_number }}"> {{ client.phone_number }} </a></td>
+                    <td> {{ client.email_address }} </td>
+                    <td><a href="https://www.google.com/maps/search/?api=1&query={{ client.address }}">{{ client.address }}</a></td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <p> There are no clients currently. You need to add a client first.</p>
+        {% endif %}
     </table>
 {% endblock content %}
 

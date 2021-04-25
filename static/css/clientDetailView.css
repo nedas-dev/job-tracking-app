@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 ul.errorlist {
-  padding: 5px;
-  width: 60%;
+  padding: 2px 5px 2px 5px;
+  width: 80%;
   text-align: center;
-  margin: auto;
+  margin: 0px auto 0px auto;
   color: black;
   list-style-type: square;
   border: none; }
   ul.errorlist li {
-    color: red; }
+    color: red;
+    font-size: 14px; }
 
 .button {
   padding: 5px;
@@ -171,13 +172,14 @@ main div.updateClientDiv {
       main div.updateClientDiv form.updateClientForm div.form p.fieldWrapper label {
         width: 30%;
         padding: 5px; }
-      main div.updateClientDiv form.updateClientForm div.form p.fieldWrapper input, main div.updateClientDiv form.updateClientForm div.form p.fieldWrapper textarea {
+      main div.updateClientDiv form.updateClientForm div.form p.fieldWrapper input {
         width: 100%;
         max-width: 400px;
         padding: 10px;
         max-height: 100px;
         min-width: 150px;
-        min-height: 26px; }
+        min-height: 26px;
+        font-size: 1rem; }
     main div.updateClientDiv form.updateClientForm input.button {
       max-width: 400px;
       width: 50%;
