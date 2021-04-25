@@ -7,10 +7,11 @@ from django.urls import reverse
 from django.shortcuts import redirect
 from django.http import JsonResponse, HttpResponseNotFound
 from . import views
-from .forms import ClientForm
+from .forms import ClientForm, SearchForm
 from .models import Client
 from django.core.exceptions import ValidationError
 from .validations import fix_phone_number
+from django.core.paginator import Paginator
 
 
 def index(request):
@@ -19,9 +20,16 @@ def index(request):
 
 @login_required
 def clients(request):
-    clientList = Client.objects.filter(user=request.user).order_by("-pk")
+    clientList = Client.objects.filter(user=request.user).order_by("name")
     if request.method == "GET":
         form = ClientForm()
+        searchForm = SearchForm(request.GET)
+        if searchForm.is_valid():
+            data = searchForm.cleaned_data
+            query = data["query"]
+            if query:
+                clientList = clientList.filter(name__icontains=query)
+
     elif request.method == "POST":
         form = ClientForm(request.POST)
 
@@ -41,9 +49,16 @@ def clients(request):
             else:
                 form.add_error("name", "Client with the same name already exists")
 
+    page_number = request.GET.get("page", 1)
+    paginator = Paginator(clientList, 15)
+    pageList = paginator.get_page(page_number)
     context = {
-        "client_list": clientList,
+        "paginator": paginator,
+        "page_obj": pageList,
         "form": form,
+        "searchForm": searchForm,
+        "is_paginated": True,
+        "search": query,
     }
 
     return render(

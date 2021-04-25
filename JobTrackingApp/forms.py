@@ -44,3 +44,7 @@ class ClientForm(ModelForm):
         data = self.cleaned_data["phone_number"]
         data = fix_phone_number(data)
         return data
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField(max_length=100, required=False)

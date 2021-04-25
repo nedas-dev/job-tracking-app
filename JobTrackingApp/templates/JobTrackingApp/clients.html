@@ -23,15 +23,38 @@
     <div class="features">
         <button class="addClient button"> Add Client </button>
     </div>
+    <div class="search">
+        <form class="searchForm" action='' method='GET'>
+            {{ searchForm.query }}
+            <input class="button" type="submit" value="Search">
+        </form>
+    </div>
+    {% if is_paginated %}
+    <div class="paginator">
+        {% if page_obj.has_previous %}
+            {% if page_obj.number != 2 %}
+            <a href="?page=1&query={{ search }}" class="page-number">First</a>
+            {% endif %}
+            <a href="?page={{ page_obj.previous_page_number }}&query={{ search }}" class="page-number">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+        <a class="current-page-number">{{ page_obj.number }}</a>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&query={{ search }}" class="page-number">{{ page_obj.next_page_number }}</a>
+        {% endif %}
+        {% if paginator.num_pages > page_obj.next_page_number %}
+            <a href="?page={{ paginator.num_pages }}&query={{ search }}" class="page-number">Last</a>
+        {% endif %}
+    </div>
+    {% endif %}
     <table id="clientsTable">
-        {% if client_list %}
+        {% if page_obj %}
             <tr class="table-header">
                 <th> Client name</th>
                 <th> Phone number</th>
                 <th> Email address </th>
                 <th> Address </th>
             </tr>
-            {% for client in client_list %}
+            {% for client in page_obj %}
                 <tr class="table-row">
                     <td class"link"><a class="link" href="{% url 'client-detail' client.pk %}">{{ client.name }}</a></td>
                     <td><a href="tel:{{ client.phone_number }}"> {{ client.phone_number }} </a></td>
@@ -40,9 +63,26 @@
                 </tr>
             {% endfor %}
         {% else %}
-            <p> There are no clients currently. You need to add a client first.</p>
+            <p class="not-found"> Could not find any client. Try again </p>
         {% endif %}
     </table>
+    {% if is_paginated %}
+    <div class="paginator">
+        {% if page_obj.has_previous %}
+            {% if page_obj.number != 2 %}
+            <a href="?page=1&query={{ search }}" class="page-number">First</a>
+            {% endif %}
+            <a href="?page={{ page_obj.previous_page_number }}&query={{ search }}" class="page-number">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+        <a class="current-page-number">{{ page_obj.number }}</a>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&query={{ search }}" class="page-number">{{ page_obj.next_page_number }}</a>
+        {% endif %}
+        {% if paginator.num_pages > page_obj.next_page_number %}
+            <a href="?page={{ paginator.num_pages }}&query={{ search }}" class="page-number">Last</a>
+        {% endif %}
+    </div>
+    {% endif %}
 {% endblock content %}
 
 {% block javascript %}

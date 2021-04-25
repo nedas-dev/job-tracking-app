@@ -51,21 +51,27 @@ main{
 
     table#clientsTable{
         width: 100%;
-        border-collapse: collapse;
+        // border-collapse: collapse;
+        border-spacing: 0 1.5rem;
         th{
-            border: 1px solid grey;
             text-align: center;
-            padding: 10px;
-
+            padding: 15px;
+            border-bottom: 1px solid grey;
+            border-top: 1px solid grey;
+            background-color: $special-pink;
+            background-color: $special-blue;
+            border-right: 1px solid rgb(201, 201, 201);
+            text-transform: uppercase;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: normal;
+            letter-spacing: 1px;
         }
 
         td{
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            border: 1px solid grey;
             text-align: center;
-            padding: 5px;
-
+            padding: 20px 5px;
+            // border-bottom: 1px solid grey;
+            // border-top: 1px solid grey;
             a{
                 color: inherit;
                 text-decoration: underline;
@@ -75,6 +81,44 @@ main{
                     color: rgb(2, 10, 227);
                     text-decoration: none;
                 }
+            }
+        }
+
+        .table-row{
+            background-color:white;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 9px 0px rgb(201, 201, 201);
+            &:hover{
+                background-color: $special-blue;
+                background-color: antiquewhite;
+            }
+        }
+    }
+
+    div.paginator{
+        clear: both;
+        margin: auto;
+        text-align: center;
+        margin: 0.5rem auto 0.1rem auto;
+    }
+
+    p.not-found{
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+        color: red;
+    }
+
+    div.search{
+        float:left;
+        display: block;
+        margin: 0.5rem;
+        input{
+            padding: 5px;
+            border-radius: 5px;
+            &.button{
+                width: 90px;
             }
         }
     }

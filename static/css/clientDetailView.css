@@ -1,4 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+a.page-number {
+  padding: 5px 10px;
+  border: 1px solid #919191;
+  border-radius: 5px;
+  background-color: #b1e5f2;
+  cursor: pointer;
+  text-align: center;
+  margin: 3px; }
+  a.page-number:hover {
+    background-color: #f28c98;
+    color: white; }
+
+a.current-page-number {
+  padding: 5px 10px;
+  border: 1px solid #919191;
+  border-radius: 5px;
+  background-color: #f28c98;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin: 3px; }
+
 ul.errorlist {
   padding: 2px 5px 2px 5px;
   width: 80%;

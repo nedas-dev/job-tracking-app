@@ -7,6 +7,31 @@ $special-darker-white:  rgb(223, 223, 223);
 
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
+a.page-number{
+    padding: 5px 10px;
+    border: 1px solid $special-light-grey;
+    border-radius: 5px;
+    background-color: $special-blue;
+    cursor: pointer;
+    text-align: center;
+    margin: 3px;
+    &:hover{
+        background-color: $special-pink;
+        color: rgb(255, 255, 255);
+    }
+}
+
+a.current-page-number{
+    padding: 5px 10px;
+    border: 1px solid $special-light-grey;
+    border-radius: 5px;
+    background-color: $special-pink;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: center;
+    margin:3px;
+}
+
 ul.errorlist{
     padding: 2px 5px 2px 5px;
     width: 80%;
@@ -20,7 +45,6 @@ ul.errorlist{
         font-size: 14px;
     }
 }
-
 
 
 .button{
