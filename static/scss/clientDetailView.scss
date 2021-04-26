@@ -58,6 +58,29 @@ main{
                 text-align: center;
                 font-size: 1.2rem;
             }
+            div.buttonContainer{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                input{
+                    flex-basis: 25%;
+                    &:hover{
+                        background-color: green;
+                        color: white;
+                    }
+                }
+                a.button{
+                    flex-basis: 25%;
+                    margin-top: 1.4rem;
+                    font-size: 14px;
+                    color: white;
+                    &:hover{
+                        background-color: red;
+                        color: white;
+                    }
+                }
+            }
         }
     }
 }

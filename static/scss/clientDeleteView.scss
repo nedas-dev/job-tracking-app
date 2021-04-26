@@ -1,0 +1,48 @@
+@import 'base';
+
+main{
+    div.container{
+        box-sizing: border-box;
+        overflow: hidden;
+        margin:1rem auto 2rem auto;
+        position:relative;
+        max-width: 800px;
+        width: 90%;
+        min-width: 220px;
+        height: 400px;
+        color: black;
+        background-image: linear-gradient($special-white, $special-darker-white);
+        text-align: center;
+        border-radius: 5px;
+        padding: 30px;
+        box-shadow: 5px 5px 10px #9a9a9a;
+        form{
+            width: 80%;
+            margin:auto;
+            p{
+                border: 2px solid rgb(171, 171, 171);
+                padding: 10px 5px;
+                border-radius: 5px;
+                margin-top: 120px;
+                font-size: 1.1rem;
+                span{
+                    font-weight: bold;
+                }
+                margin-bottom: 4rem;
+            }
+            div.wrapper{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                input{
+                    flex-basis: 30%;
+                    &.yes:hover{
+                        background-color: red;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

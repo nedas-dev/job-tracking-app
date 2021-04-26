@@ -19,7 +19,10 @@
                     </p>
                 {% endfor %}
             </div>
-            <input class="button" type="submit" value="Update">
+            <div class="buttonContainer">
+                <input class="button" type="submit" name="action" value="Update">
+                <a class="button" href="{% url 'client-delete' pk %}">Delete</a>
+            </div>
         </form>
     </div>
 {% endblock content %}

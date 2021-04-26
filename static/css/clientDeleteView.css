@@ -194,98 +194,40 @@ main {
   position: relative;
   z-index: 0; }
 
-main div.createClientDiv {
-  margin: auto;
-  display: none;
-  width: 280px;
-  min-width: 240px;
-  max-width: 340px;
-  position: absolute;
-  left: 35%;
-  color: black; }
-  main div.createClientDiv form.addClientForm {
-    background-color: #f28c98;
-    background-image: linear-gradient(#ededed, #dfdfdf);
-    width: inherit;
-    height: inherit;
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 5px 5px 10px #9a9a9a; }
-    main div.createClientDiv form.addClientForm input {
-      text-align: center;
-      padding: 5px;
-      width: 90%; }
-      main div.createClientDiv form.addClientForm input.button {
-        margin-top: 0.7rem;
-        margin-bottom: 0.7rem; }
-    main div.createClientDiv form.addClientForm p.formExit {
-      position: absolute;
-      right: -15px;
-      top: -10px; }
-
-main div.features {
-  float: right;
-  margin-right: 1rem; }
-  main div.features button.addClient {
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer; }
-
-main table#clientsTable {
-  width: 100%;
-  border-spacing: 0 1.5rem; }
-  main table#clientsTable th {
-    text-align: center;
-    padding: 15px;
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
-    background-color: #f28c98;
-    background-color: #b1e5f2;
-    border-right: 1px solid #c9c9c9;
-    text-transform: uppercase;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: normal;
-    letter-spacing: 1px; }
-  main table#clientsTable td {
-    text-align: center;
-    padding: 20px 5px; }
-    main table#clientsTable td a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-color: inherit; }
-      main table#clientsTable td a:hover {
-        color: #020ae3;
-        text-decoration: none; }
-  main table#clientsTable .table-row {
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid black;
-    box-shadow: 0px 0px 9px 0px #c9c9c9; }
-    main table#clientsTable .table-row:hover {
-      background-color: #b1e5f2;
-      background-color: antiquewhite; }
-
-main div.paginator {
-  clear: both;
-  margin: auto;
+main div.container {
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 1rem auto 2rem auto;
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  min-width: 220px;
+  height: 400px;
+  color: black;
+  background-image: linear-gradient(#ededed, #dfdfdf);
   text-align: center;
-  margin: 0.5rem auto 0.1rem auto; }
-
-main p.not-found {
-  border: 1px solid black;
-  padding: 5px;
-  text-align: center;
-  color: red; }
-
-main div.search {
-  float: left;
-  display: block;
-  margin: 0.5rem; }
-  main div.search input {
-    padding: 5px;
-    border-radius: 5px; }
-    main div.search input.button {
-      width: 90px; }
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 5px 5px 10px #9a9a9a; }
+  main div.container form {
+    width: 80%;
+    margin: auto; }
+    main div.container form p {
+      border: 2px solid #ababab;
+      padding: 10px 5px;
+      border-radius: 5px;
+      margin-top: 120px;
+      font-size: 1.1rem;
+      margin-bottom: 4rem; }
+      main div.container form p span {
+        font-weight: bold; }
+    main div.container form div.wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around; }
+      main div.container form div.wrapper input {
+        flex-basis: 30%; }
+        main div.container form div.wrapper input.yes:hover {
+          background-color: red;
+          color: white; }

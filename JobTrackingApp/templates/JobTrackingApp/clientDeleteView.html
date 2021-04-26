@@ -1,0 +1,20 @@
+{% extends 'JobTrackingApp/base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/clientDeleteView.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <div class="container">
+        <form action='' method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want to delete <span>{{ client_obj.name }}</span> ?</p>
+            <div class="wrapper">
+                <input class="button yes" type="submit" name="action" value="Yes">
+                <input class="button" type="submit" name="action" value="No">
+            </div>
+        </form>
+    </div>
+{% endblock content %}

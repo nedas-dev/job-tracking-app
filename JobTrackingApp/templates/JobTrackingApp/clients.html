@@ -59,11 +59,11 @@
                     <td class"link"><a class="link" href="{% url 'client-detail' client.pk %}">{{ client.name }}</a></td>
                     <td><a href="tel:{{ client.phone_number }}"> {{ client.phone_number }} </a></td>
                     <td> {{ client.email_address }} </td>
-                    <td><a href="https://www.google.com/maps/search/?api=1&query={{ client.address }}">{{ client.address }}</a></td>
+                    <td><a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ client.address }}">{{ client.address }}</a></td>
                 </tr>
             {% endfor %}
         {% else %}
-            <p class="not-found"> Could not find any client. Try again </p>
+            <p class="not-found"> Client was not found. Maybe create a new client?</p>
         {% endif %}
     </table>
     {% if is_paginated %}

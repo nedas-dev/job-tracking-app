@@ -12,6 +12,7 @@ from .models import Client
 from django.core.exceptions import ValidationError
 from .validations import fix_phone_number
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 
 def index(request):
@@ -45,6 +46,7 @@ def clients(request):
                     email_address=data["email_address"],
                 )
                 client.save()
+                messages.success(request, "You have successfully created a new client!")
                 return redirect(reverse("clients"))
             else:
                 form.add_error("name", "Client with the same name already exists")
@@ -52,6 +54,7 @@ def clients(request):
     page_number = request.GET.get("page", 1)
     paginator = Paginator(clientList, 15)
     pageList = paginator.get_page(page_number)
+
     context = {
         "paginator": paginator,
         "page_obj": pageList,
@@ -72,15 +75,17 @@ def clients(request):
 def clientDetailView(request, pk):
     clientObj = Client.objects.filter(user=request.user).filter(pk=pk)
     exists = clientObj.exists()
+
     if exists and request.method == "GET":
         form = ClientForm(instance=clientObj[0])
-        context = {"form": form}
+        context = {"form": form, "pk": clientObj[0].pk}
         return render(
             request,
             "JobTrackingApp/clientDetailView.html",
             context,
         )
     elif exists and request.method == "POST":
+
         form = ClientForm(request.POST, instance=clientObj[0])
         if form.is_valid():
             data = form.cleaned_data
@@ -98,6 +103,7 @@ def clientDetailView(request, pk):
                     {"form": form},
                 )
             form.save()
+            messages.success(request, f"You have successfully updated {data['name']}!")
             return redirect(reverse("clients"))
         else:
             return render(
@@ -107,3 +113,32 @@ def clientDetailView(request, pk):
             )
     else:
         return HttpResponseNotFound("404 Page not found")
+
+
+@login_required
+def clientDeleteView(request, pk):
+    clientObj = Client.objects.filter(user=request.user).filter(pk=pk)
+
+    client_exists = clientObj.exists()
+    if client_exists:
+        context = {"client_obj": clientObj[0]}
+    else:
+        return HttpResponseNotFound("Something went wrong")
+
+    if (
+        request.method == "POST"
+        and client_exists
+        and request.POST.get("action") == "Yes"
+    ):
+        name = clientObj[0].name
+        clientObj[0].delete()
+        messages.success(request, f"You have successfully deleted {name}!")
+        return redirect(reverse("clients"))
+    elif (
+        request.method == "POST"
+        and client_exists
+        and request.POST.get("action") == "No"
+    ):
+        return redirect(reverse("client-detail", args=[pk]))
+
+    return render(request, "JobTrackingApp/clientDeleteView.html", context=context)

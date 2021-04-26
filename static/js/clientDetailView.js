@@ -1,3 +1,5 @@
+const updateForm = document.querySelector('form.updateClientForm')
+
 // --------------------------------------------------------------
 // Autocomplete address script for Google Place API
 function initAutocomplete() {
