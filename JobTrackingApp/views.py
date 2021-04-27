@@ -85,7 +85,6 @@ def clientDetailView(request, pk):
             context,
         )
     elif exists and request.method == "POST":
-
         form = ClientForm(request.POST, instance=clientObj[0])
         if form.is_valid():
             data = form.cleaned_data
@@ -103,13 +102,19 @@ def clientDetailView(request, pk):
                     {"form": form},
                 )
             form.save()
-            messages.success(request, f"You have successfully updated {data['name']}!")
+            messages.success(
+                request,
+                f"You have successfully updated {data['name']}!",
+            )
             return redirect(reverse("clients"))
         else:
             return render(
                 request,
                 "JobTrackingApp/clientDetailView.html",
-                {"form": form},
+                context={
+                    "form": form,
+                    "pk": clientObj[0].pk,
+                },
             )
     else:
         return HttpResponseNotFound("404 Page not found")

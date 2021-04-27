@@ -45,6 +45,7 @@
             {% for message in messages %}
                 <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
                     {{ message }}
+                    <p class="exit closeMessage">x</p>
                 </li>
             {% endfor %}
         </ul>

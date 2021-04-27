@@ -21,7 +21,7 @@ class ClientForm(ModelForm):
     phone_number = forms.RegexField(
         regex=r"^(\+?1?)\D*(\d{3})\D*(\d{3})\D*(\d{4})\D*$",
         error_messages={
-            "invalid": "Phone number must be entered in the format: '+1-333-666-9999'. Up to 15 digits allowed.",
+            "invalid": "Phone number must be entered in the format: '+1-333-666-9999'",
         },
         required=False,
         widget=forms.TextInput(

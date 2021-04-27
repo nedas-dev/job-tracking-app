@@ -50,3 +50,11 @@ document.getElementById('sidebar-icon').addEventListener('click', (e) => {
 
 // END|  NAVIGATION BAR / SIDEBAR  |END
 // ---------------------------------------------------------|
+
+// Message framework (closing the message button listener)
+const closeMessageButtonEl = document.querySelector('p.closeMessage');
+if (closeMessageButtonEl) {
+    closeMessageButtonEl.addEventListener('click', (e) => {
+        closeMessageButtonEl.parentElement.style.display = "None";
+    })
+}

@@ -12,6 +12,12 @@ ul.messages {
     text-align: center;
     border: 1px solid black;
     border-radius: 1px; }
+    ul.messages li p {
+      display: inline;
+      position: absolute;
+      margin: 0;
+      right: 7px;
+      top: 7px; }
   ul.messages li.success {
     background-color: #29ce29;
     color: black; }
@@ -192,7 +198,9 @@ main {
   margin: auto;
   background-color: white;
   position: relative;
-  z-index: 0; }
+  z-index: 0;
+  overflow: hidden;
+  box-sizing: border-box; }
 
 main div.updateClientDiv {
   box-sizing: border-box;

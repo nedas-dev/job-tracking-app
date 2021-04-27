@@ -56,10 +56,7 @@ function clearInputsAddClientForm() {
 
 
 addClientForm.addEventListener('submit', (e) => {
-    // e.preventDefault();
     addClientDiv.style.display = 'None';
-    // addClient()
-    // clearInputsAddClientForm()
 })
 
 addClientButton.addEventListener('click', (e) => {
