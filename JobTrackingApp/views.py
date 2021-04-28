@@ -75,10 +75,11 @@ def clients(request):
 def clientDetailView(request, pk):
     clientObj = Client.objects.filter(user=request.user).filter(pk=pk)
     exists = clientObj.exists()
-
+    context = {}
+    context["pk"] = pk
     if exists and request.method == "GET":
         form = ClientForm(instance=clientObj[0])
-        context = {"form": form, "pk": clientObj[0].pk}
+        context["form"] = form
         return render(
             request,
             "JobTrackingApp/clientDetailView.html",
@@ -86,6 +87,7 @@ def clientDetailView(request, pk):
         )
     elif exists and request.method == "POST":
         form = ClientForm(request.POST, instance=clientObj[0])
+        context["form"] = form
         if form.is_valid():
             data = form.cleaned_data
             exists = (
@@ -99,7 +101,7 @@ def clientDetailView(request, pk):
                 return render(
                     request,
                     "JobTrackingApp/clientDetailView.html",
-                    {"form": form},
+                    context,
                 )
             form.save()
             messages.success(
@@ -111,10 +113,7 @@ def clientDetailView(request, pk):
             return render(
                 request,
                 "JobTrackingApp/clientDetailView.html",
-                context={
-                    "form": form,
-                    "pk": clientObj[0].pk,
-                },
+                context=context,
             )
     else:
         return HttpResponseNotFound("404 Page not found")

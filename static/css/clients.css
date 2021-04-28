@@ -233,11 +233,27 @@ main div.createClientDiv {
       right: -15px;
       top: -10px; }
 
-main div.features {
-  float: right;
-  margin-right: 1rem; }
-  main div.features button.addClient {
-    margin: 5px;
+main div.wrapper {
+  margin: 1rem auto 2rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  main div.wrapper div {
+    margin-bottom: 1rem; }
+  main div.wrapper div.search {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row; }
+    main div.wrapper div.search input {
+      padding: 5px;
+      border-radius: 5px; }
+      main div.wrapper div.search input.button {
+        width: 70px; }
+      main div.wrapper div.search input#id_query {
+        min-width: 70px;
+        max-width: 120px; }
+  main div.wrapper div.features button.addClient {
     padding: 5px;
     border-radius: 5px;
     cursor: pointer; }
@@ -259,7 +275,8 @@ main table#clientsTable {
     letter-spacing: 1px; }
   main table#clientsTable td {
     text-align: center;
-    padding: 20px 5px; }
+    padding: 2rem 5px;
+    max-width: 200px; }
     main table#clientsTable td a {
       color: inherit;
       text-decoration: underline;
@@ -288,12 +305,52 @@ main p.not-found {
   text-align: center;
   color: red; }
 
-main div.search {
-  float: left;
-  display: block;
-  margin: 0.5rem; }
-  main div.search input {
-    padding: 5px;
-    border-radius: 5px; }
-    main div.search input.button {
-      width: 90px; }
+@media screen and (max-width: 501px) {
+  main table#clientsTable {
+    width: 100%;
+    border-spacing: 0 3rem; }
+    main table#clientsTable tr.table-header {
+      display: none; }
+    main table#clientsTable tr {
+      width: 100%;
+      margin-bottom: 5rem; }
+      main table#clientsTable tr td {
+        padding: 10px 5px;
+        overflow: hidden;
+        display: block;
+        text-align: right;
+        border: 1px solid #f0f0f0;
+        max-width: 501px; }
+      main table#clientsTable tr td::before {
+        content: attr(data-name);
+        float: left;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        padding-right: 2rem;
+        text-transform: uppercase;
+        font-size: 12px; } }
+
+@media screen and (max-width: 768px) {
+  main table#clientsTable {
+    width: 100%;
+    border-spacing: 0 3rem; }
+    main table#clientsTable tr.table-header {
+      display: none; }
+    main table#clientsTable tr {
+      width: 100%; }
+    main table#clientsTable td {
+      max-width: 768px;
+      padding: 10px 5px;
+      overflow: hidden;
+      display: block;
+      text-align: right;
+      font-size: 1rem;
+      border: 1px solid #f0f0f0; }
+    main table#clientsTable td::before {
+      content: attr(data-name);
+      float: left;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      padding-right: 1rem;
+      text-transform: uppercase;
+      font-size: 14px; } }
