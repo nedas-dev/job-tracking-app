@@ -148,10 +148,13 @@ main{
     }
 
     p.not-found{
-        border: 1px solid black;
-        padding: 5px;
+        margin-top: 3.5rem;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 10px;
         text-align: center;
         color: red;
+
     }
 
 }
