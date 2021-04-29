@@ -2,24 +2,31 @@
 
 main{
     div.createClientDiv{
-        margin:auto;
+        box-sizing: border-box;
         display: none;
-        width: 280px;
-        min-width: 240px;
-        max-width: 340px;
         position: absolute;
-        left: 35%;
+        top: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
         color: black;
+
         form.addClientForm{
+            p.formExit{
+                position: absolute;
+                text-align: center;
+                top: -10px;
+                right: 5px;
+            }
+            position: relative;
             background-color: $special-pink;
             background-image: linear-gradient($special-white, $special-darker-white);
-            width: inherit;
-            height: inherit;
+            width: 280px;
             border: 1px solid black;
             text-align: center;
             border-radius: 5px;
             padding: 10px;
             box-shadow: 5px 5px 10px #9a9a9a;
+            border: 1px solid black;
             input{
                 text-align: center;
                 padding: 5px;
@@ -29,12 +36,6 @@ main{
                     margin-bottom: 0.7rem;
                 }
             }
-
-            p.formExit{
-                position: absolute;
-                right: -15px;
-                top: -10px;
-            }
         }
     }
 
@@ -43,7 +44,7 @@ main{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap;
+        flex-wrap: wrap-reverse;
 
         div{
             margin-bottom: 1rem;
@@ -60,7 +61,7 @@ main{
                 }
                 &#id_query{
                     min-width: 70px;
-                    max-width: 120px;
+                    max-width: 175px;
                 }
             }
         }
@@ -78,6 +79,8 @@ main{
     table#clientsTable{
         width: 100%;
         border-spacing: 0 1.5rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
         th{
             text-align: center;
             padding: 15px;
@@ -94,7 +97,9 @@ main{
 
         td{
             text-align: center;
-            padding: 2rem 5px;
+            padding: 2rem 12px;
+            border-bottom: 1px solid rgb(235, 235, 235);
+            border-top: 1px solid rgb(235, 235, 235);
             a{
                 color: inherit;
                 text-decoration: underline;
@@ -108,14 +113,29 @@ main{
             max-width: 200px;
         }
 
-        .table-row{
+        td.tdName:hover{
+            a{
+                color: rgb(2, 10, 227);
+                text-decoration: none;
+                position: relative;
+                &::before{
+                    content: 'Edit Profile';
+                    position: absolute;
+                    visibility: visible;
+                    left:50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    text-align: center;
+                }
+                visibility: hidden;
+            }
+        }
+        
+        tr.table-row{
             background-color:white;
-            border-radius: 5px;
-            border: 1px solid black;
             box-shadow: 0px 0px 9px 0px rgb(201, 201, 201);
             &:hover{
-                background-color: $special-blue;
-                background-color: antiquewhite;
+                background-color: rgb(249, 243, 237);
             }
         }
     }
@@ -139,6 +159,14 @@ main{
 // Media Queries
 @media screen and (max-width: 501px) {
     main{
+        width: 95%;
+        div.createClientDiv{
+            width: 80%;
+            max-width: 280px;
+            form.addClientForm{
+                width: 100%;
+            }
+        }
         table#clientsTable{
             width: 100%;
             border-spacing: 0 3rem;
@@ -167,7 +195,17 @@ main{
                     text-transform: uppercase;
                     font-size: 12px;
                 }
+
+                td.tdName:hover{
+                    a{
+                        &::before{
+                            display: none;
+                        }
+                        visibility: visible;
+                    }
+                }
             }
+
         
         }
     }
@@ -176,6 +214,11 @@ main{
 
 @media screen and (max-width: 768px) {
     main{
+        div.createClientDiv{
+            form{
+                width: 95%;
+            }
+        }
         table#clientsTable{
             width: 100%;
             // border-collapse: collapse;
@@ -206,6 +249,15 @@ main{
                 padding-right: 1rem;
                 text-transform: uppercase;
                 font-size: 14px;
+            }
+
+            td.tdName:hover{
+                a{
+                    &::before{
+                        display: none;
+                    }
+                    visibility: visible;
+                }
             }
         }
     } 

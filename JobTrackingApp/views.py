@@ -52,7 +52,7 @@ def clients(request):
                 form.add_error("name", "Client with the same name already exists")
 
     page_number = request.GET.get("page", 1)
-    paginator = Paginator(clientList, 15)
+    paginator = Paginator(clientList, 10)
     pageList = paginator.get_page(page_number)
 
     context = {
