@@ -1,60 +1,28 @@
-// ---------------------------------------------------------|
-// NAVIGATION BAR / SIDEBAR 
+// HOME PAGE JS SCRIPT
+const createEventFormFieldList = document.querySelectorAll('div.field');
 
-
-class WebsiteController {
-    constructor() {
-        this.sidebarActive = false
+if (createEventFormFieldList) {
+    for (let i = 0; i < createEventFormFieldList.length; i++) {
+        let fieldChildren = createEventFormFieldList[i].children;
+        let errorDiv = fieldChildren[0]
+        let inputDiv = fieldChildren[2]
+        if (errorDiv.children.length > 0) {
+            inputDiv.children[0].style.border = "1px solid red"
+        }
     }
+    // Add event form's last field adjustment
+    createEventFormFieldList[createEventFormFieldList.length - 1].style.flexBasis = "90%"
 }
 
-const sidebarLines = document.querySelector('span.side-bar-container').children;
-const sidebarContainer = document.querySelector('div.sidebar-container');
-const mainContent = document.getElementById('content');
-const websiteController = new WebsiteController();
-
-
-const closeSidebar = function () {
-    sidebarLines[0].className = 'sidebar';
-    sidebarLines[1].className = 'sidebar';
-    sidebarLines[2].className = 'sidebar';
-    sidebarContainer.style.transform = "translate(-200px)";
-
-    websiteController.sidebarActive = false
-}
-
-const openSidebar = function () {
-    sidebarLines[0].className = 'sidebar sidebar1';
-    sidebarLines[1].className = 'sidebar sidebar2';
-    sidebarLines[2].className = 'sidebar sidebar3';
-    sidebarContainer.style.transform = "translate(0px)"
-
-    websiteController.sidebarActive = true
-
-    // { 'once': true} - run event listener given function exactly once and then stop tracking the event (remove event)
-    mainContent.addEventListener('click', (e) => {
-        closeSidebar()
-    }, { 'once': true })
-
-}
-
-// This code is responsible for opening and closing sidebar.
-document.getElementById('sidebar-icon').addEventListener('click', (e) => {
-    if (websiteController.sidebarActive) {
-        closeSidebar()
-    }
-    else {
-        openSidebar()
+// When pressing on any table row it expands the Job Description tab (or minimizes)
+document.querySelector('table#eventTable').addEventListener('click', (e) => {
+    if (e.target.parentElement.className == 'table-row') {
+        let tdDescription = e.target.parentElement.lastElementChild
+        if (tdDescription.className == 'job-description wrap') {
+            tdDescription.className = 'job-description';
+        }
+        else {
+            tdDescription.className = 'job-description wrap'
+        }
     }
 })
-
-// END|  NAVIGATION BAR / SIDEBAR  |END
-// ---------------------------------------------------------|
-
-// Message framework (closing the message button listener)
-const closeMessageButtonEl = document.querySelector('p.closeMessage');
-if (closeMessageButtonEl) {
-    closeMessageButtonEl.addEventListener('click', (e) => {
-        closeMessageButtonEl.parentElement.style.display = "None";
-    })
-}

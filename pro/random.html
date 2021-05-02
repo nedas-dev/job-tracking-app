@@ -1,0 +1,22 @@
+<form class="addEventForm" action='' method='POST'>
+    <input type="hidden" name="csrfmiddlewaretoken" value="HHXnmQK5zPDFbELvkJQnlQqK7WjPOMcaZVMlWZlHpOvcerfN2zwA0YiLfjtyHUz5">
+    <p class="header">Create an Event</p>
+    
+        <div class="field">
+            <div class="flex-item flex-item1"><ul class="errorlist"><li>This field is required.</li></ul> </div>
+            <div class="flex-item flex-item2"><label for="id_date">Date:</label> </div>
+            <div class="flex-item flex-item3"><input type="date" name="date" required id="id_date"> </div>
+        </div>
+    
+        <div class="field">
+            <div class="flex-item flex-item1"> </div>
+            <div class="flex-item flex-item2"><label for="id_duration">Duration:</label> </div>
+            <div class="flex-item flex-item3"><input type="text" name="duration" maxlength="100" id="id_duration"> </div>
+        </div>
+    
+        <div class="field">
+            <div class="flex-item flex-item1"><ul class="errorlist"><li>This field is required.</li></ul> </div>
+            <div class="flex-item flex-item2"><label for="id_work_order">Work order:</label> </div>
+            <div class="flex-item flex-item3"><input type="text" name="work_order" maxlength="20" required id="id_work_order"> </div>
+        </div>
+</form>

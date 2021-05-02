@@ -7,20 +7,6 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
-        <div class="createEventDiv">
-            <form class="addClientForm" action='' method='POST'>
-                {% csrf_token %}
-                {% for field in eventForm %}
-                    <p> 
-                        {{ field.label_tag }}
-                        {{ field }}
-                        {{ field.errors }} 
-                    </p>
-                {% endfor %}
-                <input class="button" type="submit" value="Create new client">
-            </form>
-        </div>
-        
         <div class="wrapper">
             <div class="search">
                 <form class="searchForm" action='' method='GET'>
@@ -32,6 +18,23 @@
             <div class="features">
                 <button class="addClient button"> Add Event </button>
             </div>
+        </div>
+
+        <div class="createEventDiv">
+            <form class="addEventForm" action='' method='POST'>
+                {% csrf_token %}
+                <p class="header">Create an Event</p>
+                <div class="wrapper2">
+                    {% for field in eventForm %}
+                        <div class="field">
+                            <div class="flex-item flex-item1">{{ field.errors }} </div>
+                            <div class="flex-item flex-item2">{{ field.label_tag }} </div>
+                            <div class="flex-item flex-item3">{{ field }} </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <input class="button" type="submit" value="Submit">
+            </form>
         </div>
 
         <table id='eventTable'>
@@ -73,3 +76,7 @@
         <table>Please login</table>
     {% endif %}
 {% endblock content %}
+
+{% block javascript %}
+    <script src="{% static 'js/index.js'%}"> </script>
+{% endblock javascript%}

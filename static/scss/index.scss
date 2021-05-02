@@ -1,39 +1,67 @@
 @import 'base';
 
 main#content{
-    div.createClientDiv{
+    div.createEventDiv{
         box-sizing: border-box;
-        display: none;
-        position: absolute;
-        top: 200px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: black;
-
-        form.addClientForm{
-            p.formExit{
-                position: absolute;
-                text-align: center;
-                top: -10px;
-                right: 5px;
-            }
-            position: relative;
-            background-color: $special-pink;
-            background-image: linear-gradient($special-white, $special-darker-white);
-            width: 280px;
-            border: 1px solid black;
-            text-align: center;
-            border-radius: 5px;
+        overflow: hidden;
+        padding: 10px;
+        width: 90%;
+        margin: auto;
+        border: 1px solid grey;
+        border-radius: 10px;
+        p.header{
             padding: 10px;
-            box-shadow: 5px 5px 10px #9a9a9a;
-            border: 1px solid black;
-            input{
+            font-size: 22px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        input.button{
+            max-width: 300px;
+            margin: auto;
+            display: block;
+        }
+        div.wrapper2{
+            box-sizing: border-box;
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            div.field{
+                flex-basis: 48%;
                 text-align: center;
-                padding: 5px;
-                width: 90%;
-                &.button{
-                    margin-top: 0.7rem;
-                    margin-bottom: 0.7rem;
+                display: flex;
+                flex-wrap: wrap;
+                .flex-item{
+                    margin: 10px;
+                }
+
+                .flex-item1{
+                    order: 3;
+                    width: 100%;
+                }
+
+                .flex-item2{
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    text-align: center;
+                    order: 1;
+                    width: 100%;
+                }
+
+                .flex-item3{
+                    input, select{
+                        width: 100%;
+                        text-align: center;
+                        padding: 5px;
+                        max-width: 250px;
+                    }
+                    textarea{
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                    width: 100%;
+                    order: 2;
                 }
             }
         }
@@ -45,7 +73,7 @@ main#content{
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap-reverse;
-
+        border-bottom: 1px solid grey;
         div{
             margin-bottom: 1rem;
         }
@@ -113,6 +141,9 @@ main#content{
                 white-space: nowrap;
                 text-align: left;
                 overflow: auto;
+                &.wrap{
+                    white-space: pre-wrap;
+                }
             }
             &[data-name="Date"]{
                 color: dodgerblue;
@@ -133,6 +164,20 @@ main#content{
 @media screen and (max-width: 501px) {
     main#content{
         width: 95%;
+        div.createEventDiv{
+            form.addEventForm{
+                p.header{
+                    font-size: 1.2rem;
+                }
+                
+                div.wrapper2{
+                    div.field{
+                        font-size: 14px;
+                        flex-basis: 90%;
+                    }
+                }
+            }
+        }
         table#eventTable{
             width: 100%;
             border-spacing: 0 3rem;

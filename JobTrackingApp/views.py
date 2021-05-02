@@ -19,34 +19,42 @@ from django.db.models import Q
 @login_required
 def index(request):
     context = {}
-    if request.method == "GET":
-        events = ScheduleEvent.objects.filter(client__user=request.user).order_by(
-            "-date"
-        )
-        eventForm = EventForm(user=request.user)
+    query = ""
+    eventForm = EventForm(user=request.user)
 
-        searchForm = SearchForm(request.GET)
-        if searchForm.is_valid():
+    events = ScheduleEvent.objects.filter(client__user=request.user).order_by("-pk")
+
+    searchForm = SearchForm(request.GET)
+    if request.method == "GET":
+        if searchForm.is_valid() and searchForm.cleaned_data["query"]:
             data = searchForm.cleaned_data
             query = data["query"]
-            print(query)
             if query:
                 events = events.filter(
                     Q(client__name__icontains=query)
                     | Q(description__icontains=query)
                     | Q(client__address__icontains=query)
                 )
+    elif request.method == "POST":
+        print(request.GET)
+        eventForm = EventForm(request.user, request.POST)
+        if eventForm.is_valid():
+            eventForm.save()
+            messages.success(request, "You have successfully created an event!")
+            return redirect(reverse("index"))
+        else:
+            eventForm = EventForm(request.user, request.POST)
 
-        page_number = request.GET.get("page", 1)
-        paginator = Paginator(events, 12)
-        pageList = paginator.get_page(page_number)
+    page_number = request.GET.get("page", 1)
+    paginator = Paginator(events, 12)
+    pageList = paginator.get_page(page_number)
 
-        context["paginator"] = paginator
-        context["is_paginated"] = True
-        context["page_obj"] = pageList
-        context["searchForm"] = searchForm
-        context["search"] = query
-        context["eventForm"] = eventForm
+    context["searchForm"] = searchForm
+    context["search"] = query
+    context["eventForm"] = eventForm
+    context["paginator"] = paginator
+    context["is_paginated"] = True
+    context["page_obj"] = pageList
 
     return render(request, "JobTrackingApp/index.html", context)
 
