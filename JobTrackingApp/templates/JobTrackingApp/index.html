@@ -7,8 +7,69 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
-        <p>Hello, {{ user.username }}</p>
+        <div class="createEventDiv">
+            <form class="addClientForm" action='' method='POST'>
+                {% csrf_token %}
+                {% for field in eventForm %}
+                    <p> 
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }} 
+                    </p>
+                {% endfor %}
+                <input class="button" type="submit" value="Create new client">
+            </form>
+        </div>
+        
+        <div class="wrapper">
+            <div class="search">
+                <form class="searchForm" action='' method='GET'>
+                    {{ searchForm.query }}
+                    <input class="button" type="submit" value="Search">
+                </form>
+            </div>
+
+            <div class="features">
+                <button class="addClient button"> Add Event </button>
+            </div>
+        </div>
+
+        <table id='eventTable'>
+            <tr class="table-header">
+                <th>Date</th>
+                <th>Client</th>
+                <th>Duration</th>
+                <th>Address</th>
+                <th>Job description</th>
+            </tr>
+            {% for event in page_obj %}
+                <tr class='table-row'>
+                    <td data-name="Date">{{event.date}}</td>
+                    <td data-name="Client">{{event.client.name}}</td>
+                    <td data-name="Duration">{{event.duration}}</td>
+                    <td data-name="Address">{{event.client.address}}</td>
+                    <td data-name="Job Description" class="job-description">{{event.description}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% if is_paginated %}
+        <div class="paginator">
+            {% if page_obj.has_previous %}
+                {% if page_obj.number != 2 %}
+                <a href="?page=1&query={{ search }}" class="page-number">First</a>
+                {% endif %}
+                <a href="?page={{ page_obj.previous_page_number }}&query={{ search }}" class="page-number">{{ page_obj.previous_page_number }}</a>
+            {% endif %}
+            <a class="current-page-number">{{ page_obj.number }}</a>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}&query={{ search }}" class="page-number">{{ page_obj.next_page_number }}</a>
+            {% endif %}
+            {% if paginator.num_pages > page_obj.next_page_number %}
+                <a href="?page={{ paginator.num_pages }}&query={{ search }}" class="page-number">Last</a>
+            {% endif %}
+        </div>
+        {% endif %}
     {% else %}
-        <p>Please login</p>
+        <table>Please login</table>
     {% endif %}
 {% endblock content %}

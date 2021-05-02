@@ -7,16 +7,48 @@ from django.urls import reverse
 from django.shortcuts import redirect
 from django.http import JsonResponse, HttpResponseNotFound
 from . import views
-from .forms import ClientForm, SearchForm
-from .models import Client
+from .forms import ClientForm, SearchForm, EventForm
+from .models import Client, ScheduleEvent
 from django.core.exceptions import ValidationError
 from .validations import fix_phone_number
 from django.core.paginator import Paginator
 from django.contrib import messages
+from django.db.models import Q
 
 
+@login_required
 def index(request):
-    return render(request, "JobTrackingApp/index.html")
+    context = {}
+    if request.method == "GET":
+        events = ScheduleEvent.objects.filter(client__user=request.user).order_by(
+            "-date"
+        )
+        eventForm = EventForm(user=request.user)
+
+        searchForm = SearchForm(request.GET)
+        if searchForm.is_valid():
+            data = searchForm.cleaned_data
+            query = data["query"]
+            print(query)
+            if query:
+                events = events.filter(
+                    Q(client__name__icontains=query)
+                    | Q(description__icontains=query)
+                    | Q(client__address__icontains=query)
+                )
+
+        page_number = request.GET.get("page", 1)
+        paginator = Paginator(events, 12)
+        pageList = paginator.get_page(page_number)
+
+        context["paginator"] = paginator
+        context["is_paginated"] = True
+        context["page_obj"] = pageList
+        context["searchForm"] = searchForm
+        context["search"] = query
+        context["eventForm"] = eventForm
+
+    return render(request, "JobTrackingApp/index.html", context)
 
 
 @login_required

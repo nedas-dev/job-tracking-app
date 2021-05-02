@@ -15,24 +15,52 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Client',
+            name="Client",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(blank=True, max_length=30)),
-                ('address', models.CharField(max_length=60)),
-                ('phone_number', models.CharField(blank=True, max_length=30)),
-                ('email_address', models.EmailField(blank=True, max_length=30)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(blank=True, max_length=30)),
+                ("address", models.CharField(max_length=60)),
+                ("phone_number", models.CharField(blank=True, max_length=30)),
+                ("email_address", models.EmailField(blank=True, max_length=30)),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='ScheduleEvent',
+            name="ScheduleEvent",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date', models.DateField()),
-                ('work_order', models.CharField(default='0', max_length=20)),
-                ('unit_number', models.CharField(blank=True, max_length=8)),
-                ('client', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='JobTrackingApp.client')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("date", models.DateField()),
+                ("work_order", models.CharField(default="0", max_length=20)),
+                (
+                    "client",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="JobTrackingApp.client",
+                    ),
+                ),
+                ("description", models.TextField(blank=True, max_length=10000)),
             ],
         ),
     ]

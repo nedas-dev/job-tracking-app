@@ -352,11 +352,7 @@ main p.not-found {
           font-weight: bold;
           padding-right: 2rem;
           text-transform: uppercase;
-          font-size: 12px; }
-        main table#clientsTable tr td.tdName:hover a {
-          visibility: visible; }
-          main table#clientsTable tr td.tdName:hover a::before {
-            display: none; } }
+          font-size: 12px; } }
 
 @media screen and (max-width: 768px) {
   main div.createClientDiv form {
@@ -383,8 +379,4 @@ main p.not-found {
       font-weight: bold;
       padding-right: 1rem;
       text-transform: uppercase;
-      font-size: 14px; }
-    main table#clientsTable td.tdName:hover a {
-      visibility: visible; }
-      main table#clientsTable td.tdName:hover a::before {
-        display: none; } }
+      font-size: 14px; } }

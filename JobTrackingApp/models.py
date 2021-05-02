@@ -1,6 +1,8 @@
 from django.db import models
 from django import forms
 from django.contrib.auth.models import User
+from django.core.validators import RegexValidator
+from .validations import validate_duration, format_duration
 
 # Create your models here.
 class Client(models.Model):
@@ -16,12 +18,23 @@ class Client(models.Model):
 
 class ScheduleEvent(models.Model):
     date = models.DateField()
+    duration = models.CharField(
+        max_length=100,
+        validators=[validate_duration],
+        blank=True,
+    )
     work_order = models.CharField(
-        default="0",
+        default="-",
         max_length=20,
     )
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    unit_number = models.CharField(max_length=8, blank=True)
+    description = models.TextField(max_length=2000, blank=True)
 
     def __str__(self):
-        return f"{self.client.name} - #{self.unit_number} {self.client.address} (Work Order #{self.work_order})"
+        return f"{self.client.name} --- {self.client.address} --- {self.date}"
+
+    def save(self, *args, **kwargs):
+        data = self.duration
+        formated_duration = format_duration(data)
+        self.duration = formated_duration
+        super().save(*args, **kwargs)

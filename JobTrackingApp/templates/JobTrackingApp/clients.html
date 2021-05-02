@@ -33,23 +33,6 @@
         </div>
     </div>
 
-    {% if is_paginated %}
-    <div class="paginator">
-        {% if page_obj.has_previous %}
-            {% if page_obj.number != 2 %}
-            <a href="?page=1&query={{ search }}" class="page-number">First</a>
-            {% endif %}
-            <a href="?page={{ page_obj.previous_page_number }}&query={{ search }}" class="page-number">{{ page_obj.previous_page_number }}</a>
-        {% endif %}
-        <a class="current-page-number">{{ page_obj.number }}</a>
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}&query={{ search }}" class="page-number">{{ page_obj.next_page_number }}</a>
-        {% endif %}
-        {% if paginator.num_pages > page_obj.next_page_number %}
-            <a href="?page={{ paginator.num_pages }}&query={{ search }}" class="page-number">Last</a>
-        {% endif %}
-    </div>
-    {% endif %}
     <table id="clientsTable">
         {% if page_obj %}
             <tr class="table-header">

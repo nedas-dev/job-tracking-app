@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Client
+from .models import Client, ScheduleEvent
 from django.core.exceptions import ValidationError
 from .validations import fix_phone_number
 
@@ -48,3 +48,17 @@ class ClientForm(ModelForm):
 
 class SearchForm(forms.Form):
     query = forms.CharField(max_length=100, required=False)
+
+
+class EventForm(ModelForm):
+    date = forms.DateField(
+        required=True, widget=forms.widgets.DateTimeInput(attrs={"type": "date"})
+    )
+
+    class Meta:
+        model = ScheduleEvent
+        fields = ["date", "duration", "work_order", "client", "description"]
+
+    def __init__(self, user, *args, **kwargs):
+        super(EventForm, self).__init__(*args, **kwargs)
+        self.fields["client"].queryset = Client.objects.filter(user=user)

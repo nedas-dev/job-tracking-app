@@ -199,14 +199,14 @@ main{
                     font-size: 12px;
                 }
 
-                td.tdName:hover{
-                    a{
-                        &::before{
-                            display: none;
-                        }
-                        visibility: visible;
-                    }
-                }
+                // td.tdName:hover{
+                //     a{
+                //         &::before{
+                //             display: none;
+                //         }
+                //         visibility: visible;
+                //     }
+                // }
             }
 
         
@@ -254,14 +254,14 @@ main{
                 font-size: 14px;
             }
 
-            td.tdName:hover{
-                a{
-                    &::before{
-                        display: none;
-                    }
-                    visibility: visible;
-                }
-            }
+            // td.tdName:hover{
+            //     a{
+            //         &::before{
+            //             display: none;
+            //         }
+            //         visibility: visible;
+            //     }
+            // }
         }
     } 
 }

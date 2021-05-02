@@ -1,4 +1,38 @@
 import re
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+
+
+def validate_duration(value):
+    pattern = re.compile(r"^((?P<h>\d+)\s?h[a-zA-Z]*)?\s?((?P<m>\d+)\s?m[a-zA-Z]*)?$")
+    result = pattern.match(value)
+    if result:
+        if result.groupdict().get("h", False) or result.groupdict().get("m", False):
+            pass
+        else:
+            raise ValidationError(
+                _('%(value)s is not valid. Example of valid format:"2h45min"'),
+                params={"value": value},
+            )
+    else:
+        raise ValidationError(
+            _('%(value)s is not valid. Example of valid format:"2h45min"'),
+            params={"value": value},
+        )
+
+
+def format_duration(value):
+    pattern = re.compile(r"^((?P<h>\d+)\s?h[a-zA-Z]*)?\s?((?P<m>\d+)\s?m[a-zA-Z]*)?$")
+    result = pattern.match(value)
+    data_value = ""
+    if result:
+        hours = result.groupdict().get("h", False)
+        minutes = result.groupdict().get("m", False)
+        if hours:
+            data_value += f"{hours}h "
+        if minutes:
+            data_value += f"{minutes}min"
+    return data_value
 
 
 def fix_phone_number(phone_number):
