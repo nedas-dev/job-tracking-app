@@ -34,6 +34,7 @@ def index(request):
                     Q(client__name__icontains=query)
                     | Q(description__icontains=query)
                     | Q(client__address__icontains=query)
+                    | Q(work_order__icontains=query)
                 )
     elif request.method == "POST":
         print(request.GET)

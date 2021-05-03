@@ -1,6 +1,7 @@
 // HOME PAGE JS SCRIPT
 const createEventFormFieldList = document.querySelectorAll('div.field');
 
+// In case of error messages setting input's border to color RED so the customer could see which input is wrong.
 if (createEventFormFieldList) {
     for (let i = 0; i < createEventFormFieldList.length; i++) {
         let fieldChildren = createEventFormFieldList[i].children;
@@ -10,19 +11,27 @@ if (createEventFormFieldList) {
             inputDiv.children[0].style.border = "1px solid red"
         }
     }
-    // Add event form's last field adjustment
+    // Add event form's last field adjustment (job description field)
     createEventFormFieldList[createEventFormFieldList.length - 1].style.flexBasis = "90%"
 }
 
-// When pressing on any table row it expands the Job Description tab (or minimizes)
+// When pressing on any table row it expands the Job Description tab
 document.querySelector('table#eventTable').addEventListener('click', (e) => {
-    if (e.target.parentElement.className == 'table-row') {
+    if (e.target.className.includes("job-description")) {
         let tdDescription = e.target.parentElement.lastElementChild
-        if (tdDescription.className == 'job-description wrap') {
-            tdDescription.className = 'job-description';
+        if (tdDescription.className == 'job-description') {
+            tdDescription.className = 'job-description wrap';
         }
-        else {
-            tdDescription.className = 'job-description wrap'
-        }
+    }
+})
+
+// 'Add event' button sets display of the form into block instead of none and vice versa
+document.querySelector('button.addEvent').addEventListener('click', (e) => {
+    let eventDiv = document.querySelector('div.createEventDiv');
+    if (eventDiv.style.display == 'block') {
+        eventDiv.style.display = 'none'
+    }
+    else {
+        eventDiv.style.display = 'block';
     }
 })

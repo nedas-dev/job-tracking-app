@@ -2,6 +2,8 @@
 
 main#content{
     div.createEventDiv{
+        display: none;
+        max-width: 700px;
         box-sizing: border-box;
         overflow: hidden;
         padding: 10px;
@@ -39,6 +41,7 @@ main#content{
                 .flex-item1{
                     order: 3;
                     width: 100%;
+                    
                 }
 
                 .flex-item2{
@@ -55,10 +58,13 @@ main#content{
                         text-align: center;
                         padding: 5px;
                         max-width: 250px;
+                        margin-left: 20px;
                     }
                     textarea{
                         width: 100%;
                         max-width: 100%;
+                        padding: 10px;
+                        font-size: 1rem;
                     }
                     width: 100%;
                     order: 2;
@@ -131,18 +137,19 @@ main#content{
         }
 
         td{
-            cursor: pointer;
             text-align: center;
             padding: 10px 12px;
             border-bottom: 1px solid rgb(235, 235, 235);
             border-top: 1px solid rgb(235, 235, 235);
             max-width: 200px;
             &.job-description{
+                cursor: pointer;
                 white-space: nowrap;
                 text-align: left;
                 overflow: auto;
                 &.wrap{
                     white-space: pre-wrap;
+                    cursor: auto;
                 }
             }
             &[data-name="Date"]{
