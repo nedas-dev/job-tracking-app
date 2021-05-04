@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+ul.messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: sticky;
+  top: 60px;
+  z-index: 1; }
+  ul.messages li {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 1px; }
+    ul.messages li p {
+      display: inline;
+      position: absolute;
+      margin: 0;
+      right: 7px;
+      top: 7px; }
+  ul.messages li.success {
+    background-color: #29ce29;
+    color: black; }
+  ul.messages li.warning {
+    background-color: red;
+    color: white; }
+
+a, a:visited {
+  text-decoration: none; }
+
+ul {
+  padding: 0px; }
+
+a.page-number {
+  padding: 5px 10px;
+  border: 1px solid #919191;
+  border-radius: 5px;
+  background-color: #b1e5f2;
+  cursor: pointer;
+  text-align: center;
+  margin: 3px; }
+  a.page-number:hover {
+    background-color: #f28c98;
+    color: white; }
+
+a.current-page-number {
+  padding: 5px 10px;
+  border: 1px solid #919191;
+  border-radius: 5px;
+  background-color: #f28c98;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin: 3px; }
+
+ul.errorlist {
+  padding: 2px 5px 2px 5px;
+  width: 80%;
+  text-align: center;
+  margin: 0px auto 0px auto;
+  color: black;
+  list-style-type: square;
+  border: none; }
+  ul.errorlist li {
+    color: red;
+    font-size: 14px; }
+
+.button {
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #919191;
+  color: white;
+  font-family: 'Balsamiq Sans', cursive;
+  letter-spacing: 2px;
+  border: 2px solid #7e7e7e; }
+  .button:hover {
+    color: #919191;
+    background-color: white; }
+  .button:active, .button:focus {
+    outline: none; }
+
+.exit {
+  border: 1px solid #7e7e7e;
+  padding: 2px;
+  width: 17px;
+  display: block;
+  border-radius: 50%;
+  background-color: #919191; }
+  .exit:hover {
+    color: #919191;
+    background-color: white;
+    cursor: pointer; }
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #e8e8e8;
+  font-family: Arial, Helvetica, sans-serif; }
+
+nav#navbar {
+  background-color: #393838;
+  padding: 20px 10px 20px 10px;
+  font-family: 'Balsamiq Sans', cursive;
+  color: white;
+  z-index: 3;
+  position: sticky;
+  top: 0;
+  width: 100%; }
+  nav#navbar div.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    nav#navbar div.menu div#sidebar-icon {
+      width: 20px;
+      height: 15px;
+      margin-left: 5px;
+      cursor: pointer; }
+      nav#navbar div.menu div#sidebar-icon span.side-bar-container {
+        width: inherit;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
+        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar {
+          height: 3px;
+          width: 100%;
+          background-color: #b1e5f2;
+          border-radius: 3px;
+          transition: all 0.3s ease-in-out; }
+        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar1 {
+          transform: translateY(4px) rotate(45deg); }
+        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar2 {
+          visibility: hidden;
+          transition: visibility 0.1s; }
+        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar3 {
+          transform: translateY(-8px) rotate(-45deg); }
+      nav#navbar div.menu div#sidebar-icon:hover span.side-bar-container div.sidebar {
+        background-color: white; }
+    nav#navbar div.menu div#logo {
+      color: #f28c98;
+      flex: 2;
+      text-align: start;
+      padding-left: 5%; }
+      nav#navbar div.menu div#logo:hover {
+        animation: changeColors 2s forwards; }
+      nav#navbar div.menu div#logo span {
+        color: #b1e5f2; }
+      nav#navbar div.menu div#logo img#clock {
+        width: 15px; }
+
+@keyframes changeColors {
+  50% {
+    color: white; }
+  100% {
+    color: #f28c98; } }
+    nav#navbar div.menu div#login, nav#navbar div.menu div#register, nav#navbar div.menu div#logout {
+      flex: 1;
+      text-align: center; }
+    nav#navbar div.menu div#login a:hover, nav#navbar div.menu div#logout a:hover, nav#navbar div.menu div#register a:hover {
+      color: #b1e5f2;
+      cursor: pointer; }
+
+nav#main-sidebar {
+  position: fixed;
+  z-index: 2; }
+  nav#main-sidebar div.sidebar-container {
+    transform: translate(-200px);
+    background-color: #393838;
+    color: white;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    transition: transform 0.3s ease-in-out;
+    top: 0;
+    left: 0; }
+    nav#main-sidebar div.sidebar-container ul#sidebar-ul {
+      margin-top: 6rem;
+      list-style-type: none;
+      list-style-position: outside;
+      font-size: 16px;
+      padding-left: 0px; }
+      nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item {
+        margin-left: 10px;
+        margin: 2rem;
+        padding: 5px;
+        border-radius: 5px; }
+        nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item:hover {
+          background-color: white;
+          color: black;
+          cursor: pointer; }
+
+main {
+  padding: 5px;
+  width: 85%;
+  min-height: 100vh;
+  margin: auto;
+  background-color: white;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  box-sizing: border-box; }
+
+main div.container {
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 1rem auto 2rem auto;
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  min-width: 220px;
+  height: 400px;
+  color: black;
+  background-image: linear-gradient(#ededed, #dfdfdf);
+  text-align: center;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 5px 5px 10px #9a9a9a; }
+  main div.container form {
+    width: 80%;
+    margin: auto; }
+    main div.container form p {
+      border: 2px solid #ababab;
+      padding: 10px 5px;
+      border-radius: 5px;
+      margin-top: 120px;
+      font-size: 1.1rem;
+      margin-bottom: 4rem; }
+      main div.container form p span {
+        font-weight: bold; }
+    main div.container form div.wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around; }
+      main div.container form div.wrapper input {
+        flex-basis: 30%; }
+        main div.container form div.wrapper input.yes:hover {
+          background-color: red;
+          color: white; }

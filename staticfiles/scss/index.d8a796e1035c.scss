@@ -1,0 +1,353 @@
+@import 'base';
+
+main#content{
+    div.createEventDiv{
+        display: none;
+        max-width: 700px;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 10px;
+        width: 90%;
+        margin: auto;
+        border: 1px solid grey;
+        border-radius: 10px;
+        p.header{
+            padding: 10px;
+            font-size: 22px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        input.button{
+            max-width: 300px;
+            margin: auto;
+            display: block;
+        }
+        div.wrapper2{
+            box-sizing: border-box;
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            div.field{
+                flex-basis: 48%;
+                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
+                .flex-item{
+                    margin: 10px;
+                }
+
+                .flex-item1{
+                    order: 3;
+                    width: 100%;
+                    
+                }
+
+                .flex-item2{
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    text-align: center;
+                    order: 1;
+                    width: 100%;
+                }
+
+                .flex-item3{
+                    input, select{
+                        width: 100%;
+                        text-align: center;
+                        padding: 5px;
+                        max-width: 250px;
+                        margin-left: 20px;
+                    }
+                    textarea{
+                        width: 100%;
+                        max-width: 100%;
+                        padding: 10px;
+                        font-size: 1rem;
+                    }
+                    width: 100%;
+                    order: 2;
+                }
+            }
+        }
+    }
+
+    div.wrapper{
+        margin: 1rem auto 2rem auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap-reverse;
+        border-bottom: 1px solid grey;
+        div{
+            margin-bottom: 1rem;
+        }
+        div.search{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            input{
+                padding: 5px;
+                border-radius: 5px;
+                &.button{
+                    width: 70px;
+                }
+                &#id_query{
+                    min-width: 70px;
+                    max-width: 175px;
+                }
+            }
+        }
+    
+        div.features{
+            button.addClient{
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+    div.paginator{
+        clear: both;
+        margin: auto;
+        text-align: center;
+        margin: 0.5rem auto 0.1rem auto;
+    }
+    table#eventTable{
+        width: 100%;
+        border-spacing: 0 1.5rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        th{
+            text-align: center;
+            padding: 15px;
+            border-bottom: 1px solid grey;
+            border-top: 1px solid grey;
+            background-color: $special-pink;
+            border-right: 1px solid rgb(201, 201, 201);
+            text-transform: uppercase;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: normal;
+            letter-spacing: 1px;
+            color:black;
+            font-weight: bold;
+        }
+
+        td{
+            text-align: center;
+            padding: 10px 12px;
+            border-bottom: 1px solid rgb(235, 235, 235);
+            border-top: 1px solid rgb(235, 235, 235);
+            max-width: 200px;
+            &.job-description{
+                cursor: pointer;
+                white-space: nowrap;
+                text-align: left;
+                overflow: auto;
+                &.wrap{
+                    white-space: pre-wrap;
+                    cursor: auto;
+                }
+            }
+            &[data-name="Date"]{
+                color: dodgerblue;
+                i.fa-edit{
+                    padding-right: 5px;
+                    color: grey;
+                    font-size: 18px;
+                    visibility: hidden;
+                }
+            }
+            
+        }
+        
+        tr.table-row{
+            background-color:white;
+            box-shadow: 0px 0px 9px 0px rgb(201, 201, 201);
+            &:hover{
+                background-color: rgb(249, 243, 237);
+                i.fa-edit{
+                    visibility: visible;
+                    cursor: pointer;
+                    animation: fade-in 0.5s forwards;
+                    @keyframes fade-in {
+                        0%{
+                            opacity: 0;
+                        }
+                        100%{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media Queries
+@media screen and (max-width: 501px) {
+    main#content{
+        width: 95%;
+        div.createEventDiv{
+            form.addEventForm{
+                p.header{
+                    font-size: 1.2rem;
+                }
+                
+                div.wrapper2{
+                    div.field{
+                        font-size: 14px;
+                        flex-basis: 90%;
+                    }
+                }
+            }
+        }
+        table#eventTable{
+            width: 100%;
+            border-spacing: 0 3rem;
+            tr.table-header{
+                display: none;
+            }
+
+            tr{
+                margin-bottom: 5rem;
+                padding: 5px;
+                td{
+                    padding: 5px 5px;
+                    overflow: hidden;
+                    display: block;
+                    text-align: right;
+                    border: 1px solid rgb(240, 240, 240);
+                    border-left: 1px solid grey;
+                    border-right: 1px solid grey;
+                    max-width: 501px;
+                    &.job-description{
+                        white-space: break-spaces;
+                        text-align: right;
+                        overflow: auto;
+                    }
+                    
+                    &:first-child{
+                        border-top: 2px solid grey;
+                    }
+                    &:last-child{
+                        border-bottom: 2px solid grey;
+                    }
+                    
+                }
+    
+                td::before{
+                    content: attr(data-name);
+                    float: left;
+                    margin-bottom: 1rem;
+                    font-weight: bold;
+                    padding-right: 2rem;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    background-color: $special-blue;
+                    padding: 5px;
+                    border-radius: 5px;
+                    margin-right: 15px;
+                }
+
+            }
+
+        
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    main#content{
+        table#eventTable{
+            width: 100%;
+            // border-collapse: collapse;
+            border-spacing: 0 3rem;
+            tr.table-header{
+                display: none;
+            }
+            tr{
+                width: 100%;
+            }
+            
+            tr.table-row{
+                &:hover{
+                    i.fa-edit{
+                        animation: none;
+                    }
+                }
+            }
+
+            td{
+            
+                max-width: 768px;
+                padding: 5px 5px;
+                padding-right: 10px;
+                overflow: hidden;
+                display: block;
+                text-align: right;
+                font-size: 1rem;
+                border: 1px solid rgb(240, 240, 240);
+                border-left: 2px solid grey;
+                border-right: 2px solid grey;
+                &.job-description{
+                    white-space: break-spaces;
+                    text-align: right;
+                    overflow: auto;
+                }
+                &[data-name="Date"]{
+                    color: dodgerblue;
+                    i.fa-edit{
+                        padding-right: 10px;
+                        color: grey;
+                        font-size: 20px;
+                        visibility: visible;
+                    }
+                }
+                &:first-child{
+                    border-top: 2px solid grey;
+                }
+                &:last-child{
+                    border-bottom: 2px solid grey;
+                }
+            }
+
+            td::before{
+                color: black;
+                content: attr(data-name);
+                float: left;
+                margin-bottom: 1rem;
+                font-weight: bold;
+                padding-right: 1rem;
+                text-transform: uppercase;
+                font-size: 14px;
+                background-color: $special-blue;
+                padding: 5px;
+                border-radius: 5px;
+                margin-right: 15px;
+            }
+
+            // td.tdName:hover{
+            //     a{
+            //         &::before{
+            //             display: none;
+            //         }
+            //         visibility: visible;
+            //     }
+            // }
+        }
+    } 
+}
+
+
+@media screen and (min-width:769px) and (max-width:1170px) {
+    
+}
+
+@media screen and (min-width:1171px) {
+    
+}
