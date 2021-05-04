@@ -4,7 +4,7 @@
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock css %}
-
+{% block title %} <title> Schedule Tracker - Events </title> {% endblock title %}
 {% block content %}
     {% if request.user.is_authenticated %}
         <div class="wrapper">

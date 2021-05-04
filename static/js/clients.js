@@ -87,3 +87,10 @@ function initAutocomplete() {
         types: ["address"],
     });
 }
+
+// Change the background color for one of the li items (Events) to let user know which page we are currently looking at
+let sidebarLiElement = document.querySelector('li.clients');
+if (sidebarLiElement) {
+    sidebarLiElement.style.backgroundColor = 'rgb(177, 229, 242)';
+    sidebarLiElement.style.color = 'black';
+}

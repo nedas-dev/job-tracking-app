@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Tracker</title>
+    {% block title %} {% endblock title %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     {% block css %} {% endblock css %}
     <script src="https://kit.fontawesome.com/7c0fbdbb67.js" crossorigin="anonymous"></script>
@@ -34,10 +34,10 @@
     <nav id="main-sidebar">
         <div class="sidebar-container">
             <ul id="sidebar-ul">
-                <li class="item"><a href="{% url 'index' %}">
+                <li class="item index"><a href="{% url 'index' %}">
                     Events</a></li>
-                <li class="item"><a href="{% url 'clients' %}">Clients</a></li>
-                <li class="item"><a href="{% url 'index' %}">Profile<br/> settings</a></li>
+                <li class="item clients"><a href="{% url 'clients' %}">Clients</a></li>
+                <li class="item profile"><a href="{% url 'index' %}">Profile<br/> settings</a></li>
             </ul>
         </div>
     </nav>
