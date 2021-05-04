@@ -370,6 +370,8 @@ main p.not-found {
       display: none; }
     main table#clientsTable tr {
       width: 100%; }
+      main table#clientsTable tr.table-row:hover a.edit > i {
+        animation: none; }
     main table#clientsTable td {
       max-width: 768px;
       padding: 10px 5px;

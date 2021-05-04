@@ -269,3 +269,13 @@ main div.updateClientDiv {
         main div.updateClientDiv form.updateClientForm div.buttonContainer a.button:hover {
           background-color: red;
           color: white; }
+
+@media screen and (max-width: 768px) {
+  main#content {
+    width: 100%; }
+    main#content label {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px; }
+    main#content input {
+      font-size: 14px; } }

@@ -239,6 +239,11 @@ main{
             }
             tr{
                 width: 100%;
+                &.table-row:hover{
+                    a.edit > i{
+                        animation: none;
+                    }
+                }
             }
             
             td{
