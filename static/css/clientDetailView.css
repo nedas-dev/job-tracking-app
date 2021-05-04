@@ -250,7 +250,10 @@ main div.updateClientDiv {
       margin-bottom: 2rem;
       color: black;
       text-align: center;
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      background-color: #b1e5f2;
+      border-radius: 5px;
+      padding: 10px; }
     main div.updateClientDiv form.updateClientForm div.buttonContainer {
       width: 100%;
       display: flex;

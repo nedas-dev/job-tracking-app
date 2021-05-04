@@ -216,7 +216,9 @@ main#content div.createEventDiv {
     padding: 10px;
     font-size: 22px;
     letter-spacing: 2px;
-    text-align: center; }
+    text-align: center;
+    background-color: #f28c98;
+    border-radius: 5px; }
   main#content div.createEventDiv input.button {
     max-width: 300px;
     margin: auto;
