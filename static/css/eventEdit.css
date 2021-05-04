@@ -202,193 +202,68 @@ main {
   overflow: hidden;
   box-sizing: border-box; }
 
-main div.createClientDiv {
+main#content div.createEventDiv {
+  display: block;
+  max-width: 700px;
   box-sizing: border-box;
-  display: none;
-  position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black; }
-  main div.createClientDiv form.addClientForm {
-    position: relative;
-    background-color: #f28c98;
-    background-image: linear-gradient(#ededed, #dfdfdf);
-    width: 280px;
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 5px 5px 10px #9a9a9a;
-    border: 1px solid black; }
-    main div.createClientDiv form.addClientForm p.formExit {
-      position: absolute;
-      text-align: center;
-      top: -10px;
-      right: 5px; }
-    main div.createClientDiv form.addClientForm input {
-      text-align: center;
-      padding: 5px;
-      width: 90%; }
-      main div.createClientDiv form.addClientForm input.button {
-        margin-top: 0.7rem;
-        margin-bottom: 0.7rem; }
-
-main div.wrapper {
-  margin: 1rem auto 2rem auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap-reverse;
-  border-bottom: 3px solid grey; }
-  main div.wrapper div {
-    margin-bottom: 1rem; }
-  main div.wrapper div.search {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row; }
-    main div.wrapper div.search input {
-      padding: 5px;
-      border-radius: 5px; }
-      main div.wrapper div.search input.button {
-        width: 70px; }
-      main div.wrapper div.search input#id_query {
-        min-width: 70px;
-        max-width: 175px; }
-  main div.wrapper div.features button.addClient {
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer; }
-
-main table#clientsTable {
-  width: 100%;
-  border-spacing: 0 1.5rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem; }
-  main table#clientsTable th {
-    text-align: center;
-    padding: 15px;
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
-    background-color: #f28c98;
-    background-color: #b1e5f2;
-    border-right: 1px solid #c9c9c9;
-    text-transform: uppercase;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: normal;
-    letter-spacing: 1px; }
-  main table#clientsTable td {
-    text-align: center;
-    padding: 2rem 12px;
-    border-bottom: 1px solid #ebebeb;
-    border-top: 1px solid #ebebeb;
-    max-width: 200px; }
-    main table#clientsTable td a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-color: inherit; }
-      main table#clientsTable td a:hover {
-        color: #020ae3;
-        text-decoration: none; }
-      main table#clientsTable td a.edit i.fa-edit {
-        padding-right: 10px;
-        color: grey;
-        font-size: 18px;
-        visibility: hidden;
-        text-align: left; }
-    main table#clientsTable td[data-name="Client name"] {
-      color: dodgerblue; }
-  main table#clientsTable tr.table-row {
-    background-color: white;
-    box-shadow: 0px 0px 9px 0px #c9c9c9; }
-    main table#clientsTable tr.table-row:hover {
-      background-color: #f9f3ed; }
-      main table#clientsTable tr.table-row:hover i.fa-edit {
-        visibility: visible;
-        cursor: pointer;
-        animation: fade-in 0.5s forwards; }
-
-@keyframes fade-in {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-main div.paginator {
-  clear: both;
-  margin: auto;
-  text-align: center;
-  margin: 0.5rem auto 0.1rem auto; }
-
-main p.not-found {
-  margin-top: 3.5rem;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  overflow: hidden;
   padding: 10px;
-  text-align: center;
-  color: red; }
+  width: 90%;
+  margin: auto;
+  border: 1px solid grey;
+  border-radius: 10px; }
+  main#content div.createEventDiv p.header {
+    padding: 10px;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center; }
+  main#content div.createEventDiv input.button {
+    max-width: 300px;
+    margin: auto;
+    display: block; }
+  main#content div.createEventDiv div.wrapper2 {
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    main#content div.createEventDiv div.wrapper2 div.field {
+      flex-basis: 48%;
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap; }
+      main#content div.createEventDiv div.wrapper2 div.field .flex-item {
+        margin: 10px; }
+      main#content div.createEventDiv div.wrapper2 div.field .flex-item1 {
+        order: 3;
+        width: 100%; }
+      main#content div.createEventDiv div.wrapper2 div.field .flex-item2 {
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: center;
+        order: 1;
+        width: 100%; }
+      main#content div.createEventDiv div.wrapper2 div.field .flex-item3 {
+        width: 100%;
+        order: 2; }
+        main#content div.createEventDiv div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv div.wrapper2 div.field .flex-item3 select {
+          width: 100%;
+          text-align: center;
+          padding: 5px;
+          max-width: 250px;
+          margin-left: 20px; }
+        main#content div.createEventDiv div.wrapper2 div.field .flex-item3 textarea {
+          width: 100%;
+          max-width: 100%;
+          padding: 10px;
+          font-size: 1rem; }
 
 @media screen and (max-width: 501px) {
-  main {
+  main#content {
     width: 95%; }
-    main div.createClientDiv {
-      width: 80%;
-      max-width: 280px; }
-      main div.createClientDiv form.addClientForm {
-        width: 100%; }
-    main table#clientsTable {
-      width: 100%;
-      border-spacing: 0 3rem; }
-      main table#clientsTable tr.table-header {
-        display: none; }
-      main table#clientsTable tr {
-        width: 100%;
-        margin-bottom: 5rem; }
-        main table#clientsTable tr td {
-          padding: 10px 5px;
-          overflow: hidden;
-          display: block;
-          text-align: right;
-          border: 1px solid #f0f0f0;
-          max-width: 501px; }
-        main table#clientsTable tr td::before {
-          content: attr(data-name);
-          float: left;
-          margin-bottom: 1rem;
-          font-weight: bold;
-          padding-right: 2rem;
-          text-transform: uppercase;
-          font-size: 12px; } }
-
-@media screen and (max-width: 768px) {
-  main div.createClientDiv form {
-    width: 95%; }
-  main table#clientsTable {
-    width: 100%;
-    border-spacing: 0 3rem; }
-    main table#clientsTable tr.table-header {
-      display: none; }
-    main table#clientsTable tr {
-      width: 100%; }
-    main table#clientsTable td {
-      max-width: 768px;
-      padding: 10px 5px;
-      overflow: hidden;
-      display: block;
-      text-align: right;
-      font-size: 1rem;
-      border: 1px solid #f0f0f0; }
-      main table#clientsTable td a.edit i.fa-edit {
-        padding-right: 10px;
-        color: grey;
-        font-size: 20px;
-        visibility: visible;
-        text-align: left; }
-    main table#clientsTable td::before {
-      content: attr(data-name);
-      float: left;
-      margin-bottom: 1rem;
-      font-weight: bold;
-      padding-right: 1rem;
-      text-transform: uppercase;
-      font-size: 14px; } }
+    main#content div.createEventDiv form.addEventForm p.header {
+      font-size: 1.2rem; }
+    main#content div.createEventDiv form.addEventForm div.wrapper2 div.field {
+      font-size: 14px;
+      flex-basis: 90%; } }

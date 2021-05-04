@@ -4,10 +4,10 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.urls import reverse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.http import JsonResponse, HttpResponseNotFound
 from . import views
-from .forms import ClientForm, SearchForm, EventForm
+from .forms import ClientForm, SearchForm, EventForm, EventFormEdit
 from .models import Client, ScheduleEvent
 from django.core.exceptions import ValidationError
 from .validations import fix_phone_number
@@ -37,7 +37,6 @@ def index(request):
                     | Q(work_order__icontains=query)
                 )
     elif request.method == "POST":
-        print(request.GET)
         eventForm = EventForm(request.user, request.POST)
         if eventForm.is_valid():
             eventForm.save()
@@ -58,6 +57,26 @@ def index(request):
     context["page_obj"] = pageList
 
     return render(request, "JobTrackingApp/index.html", context)
+
+
+@login_required
+def editEvent(request, pk):
+    context = {}
+    if request.method == "GET":
+        instance = get_object_or_404(ScheduleEvent, pk=pk)
+        eventForm = EventFormEdit(instance=instance)
+        context["eventForm"] = eventForm
+    elif request.method == "POST":
+        instance = get_object_or_404(ScheduleEvent, pk=pk)
+        eventForm = EventFormEdit(request.POST, instance=instance)
+        if eventForm.is_valid():
+            eventForm.save()
+            messages.success(request, "You successfully updated an event!")
+            return redirect(reverse("index"))
+        else:
+            context["eventForm"] = eventForm
+
+    return render(request, "JobTrackingApp/eventEditView.html", context)
 
 
 @login_required

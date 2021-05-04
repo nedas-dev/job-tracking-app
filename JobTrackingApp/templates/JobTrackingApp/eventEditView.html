@@ -1,0 +1,24 @@
+{% extends 'JobTrackingApp/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/eventEdit.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <div class="createEventDiv">
+        <form class="addEventForm" action='' method='POST'>
+            {% csrf_token %}
+            <p class="header">Edit Event</p>
+            <div class="wrapper2">
+                {% for field in eventForm %}
+                    <div class="field">
+                        <div class="flex-item flex-item1">{{ field.errors }} </div>
+                        <div class="flex-item flex-item2">{{ field.label_tag }} </div>
+                        <div class="flex-item flex-item3">{{ field }} </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <input class="button" type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock content %}

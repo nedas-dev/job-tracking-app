@@ -62,3 +62,9 @@ class EventForm(ModelForm):
     def __init__(self, user, *args, **kwargs):
         super(EventForm, self).__init__(*args, **kwargs)
         self.fields["client"].queryset = Client.objects.filter(user=user)
+
+
+class EventFormEdit(ModelForm):
+    class Meta:
+        model = ScheduleEvent
+        fields = ["date", "duration", "work_order", "client", "description"]

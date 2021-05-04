@@ -1,0 +1,95 @@
+@import 'base';
+
+main#content{
+    div.createEventDiv{
+        display: block;
+        max-width: 700px;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 10px;
+        width: 90%;
+        margin: auto;
+        border: 1px solid grey;
+        border-radius: 10px;
+        p.header{
+            padding: 10px;
+            font-size: 22px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        input.button{
+            max-width: 300px;
+            margin: auto;
+            display: block;
+        }
+        div.wrapper2{
+            box-sizing: border-box;
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            div.field{
+                flex-basis: 48%;
+                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
+                .flex-item{
+                    margin: 10px;
+                }
+
+                .flex-item1{
+                    order: 3;
+                    width: 100%;
+                    
+                }
+
+                .flex-item2{
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    text-align: center;
+                    order: 1;
+                    width: 100%;
+                }
+
+                .flex-item3{
+                    input, select{
+                        width: 100%;
+                        text-align: center;
+                        padding: 5px;
+                        max-width: 250px;
+                        margin-left: 20px;
+                    }
+                    textarea{
+                        width: 100%;
+                        max-width: 100%;
+                        padding: 10px;
+                        font-size: 1rem;
+                    }
+                    width: 100%;
+                    order: 2;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 501px) {
+    main#content{
+        width: 95%;
+        div.createEventDiv{
+            form.addEventForm{
+                p.header{
+                    font-size: 1.2rem;
+                }
+                
+                div.wrapper2{
+                    div.field{
+                        font-size: 14px;
+                        flex-basis: 90%;
+                    }
+                }
+            }
+        }
+    }
+}

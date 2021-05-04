@@ -22,4 +22,5 @@ urlpatterns = [
     path("clients/", views.clients, name="clients"),
     path("clients/<int:pk>/", views.clientDetailView, name="client-detail"),
     path("clients/<int:pk>/delete", views.clientDeleteView, name="client-delete"),
+    path("events/<int:pk>/edit", views.editEvent, name="editEvent"),
 ]

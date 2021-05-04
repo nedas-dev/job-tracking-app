@@ -47,7 +47,7 @@
             </tr>
             {% for event in page_obj %}
                 <tr class='table-row'>
-                    <td data-name="Date">{{event.date}}</td>
+                    <td data-name="Date"><a href="{% url 'editEvent' event.pk %}"><i class="far fa-edit"></i></a>{{event.date}}</td>
                     <td data-name="Client">{{event.client.name}}</td>
                     <td data-name="Duration">{{event.duration}}</td>
                     <td data-name="Address">{{event.client.address}}</td>
