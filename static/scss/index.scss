@@ -58,6 +58,7 @@ main#content{
                         padding: 5px;
                         max-width: 250px;
                         margin-left: 20px;
+                        -webkit-border-
                     }
                     textarea{
                         width: 90%;
@@ -68,9 +69,8 @@ main#content{
                     order: 2;
                     input[type="date"]
                     {
-                        -webkit-appearance: textfield;
-                        -moz-appearance: textfield;
-                        min-height: 1.2em;
+                        -webkit-appearance: text;
+                        -moz-appearance: text;
                         text-align: center;
                     }
                 }
