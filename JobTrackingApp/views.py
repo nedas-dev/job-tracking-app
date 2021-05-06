@@ -82,9 +82,9 @@ def editEvent(request, pk):
 @login_required
 def clients(request):
     clientList = Client.objects.filter(user=request.user).order_by("name")
+    searchForm = SearchForm(request.GET)
     if request.method == "GET":
         form = ClientForm()
-        searchForm = SearchForm(request.GET)
         if searchForm.is_valid():
             data = searchForm.cleaned_data
             query = data["query"]
