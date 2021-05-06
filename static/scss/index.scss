@@ -2,10 +2,8 @@
 
 main#content{
     div.createEventDiv{
-        display: none;
+        display: block;
         max-width: 700px;
-        box-sizing: border-box;
-        overflow: hidden;
         padding: 10px;
         width: 90%;
         margin: auto;
@@ -22,15 +20,15 @@ main#content{
             margin: auto;
             display: block;
         }
+
+        form.addEventForm{
         div.wrapper2{
-            box-sizing: border-box;
-            overflow: hidden;
             width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             div.field{
-                flex-basis: 48%;
+                flex-basis: 45%;
                 text-align: center;
                 display: flex;
                 flex-wrap: wrap;
@@ -54,15 +52,14 @@ main#content{
 
                 .flex-item3{
                     input, select{
-                        width: 100%;
+                        width: 90%;
                         text-align: center;
                         padding: 5px;
                         max-width: 250px;
                         margin-left: 20px;
                     }
                     textarea{
-                        width: 100%;
-                        max-width: 100%;
+                        width: 90%;
                         padding: 10px;
                         font-size: 1rem;
                     }
@@ -72,6 +69,7 @@ main#content{
             }
         }
     }
+        }
 
     div.wrapper{
         margin: 1rem auto 2rem auto;
@@ -190,9 +188,10 @@ main#content{
 // Media Queries
 @media screen and (max-width: 501px) {
     main#content{
-        width: 95%;
+        width: 100%;
         div.createEventDiv{
             form.addEventForm{
+                width: 98%;
                 p.header{
                     font-size: 1.2rem;
                 }
@@ -201,6 +200,11 @@ main#content{
                     div.field{
                         font-size: 14px;
                         flex-basis: 90%;
+                        .flex-item3{
+                            input, select{
+                                margin-left: 0px;
+                            }
+                        }
                     }
                 }
             }
@@ -263,6 +267,26 @@ main#content{
 
 @media screen and (max-width: 768px) {
     main#content{
+        div.createEventDiv{
+            form.addEventForm{
+                p.header{
+                    font-size: 1.2rem;
+                }
+                width: 98%;
+                div.wrapper2{
+                    div.field{
+                        flex-basis: 100%;
+                        font-size: 14px;
+                        .flex-item3{
+                            input, select{
+                                margin-left: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         table#eventTable{
             width: 100%;
             // border-collapse: collapse;

@@ -203,10 +203,8 @@ main {
   box-sizing: border-box; }
 
 main#content div.createEventDiv {
-  display: none;
+  display: block;
   max-width: 700px;
-  box-sizing: border-box;
-  overflow: hidden;
   padding: 10px;
   width: 90%;
   margin: auto;
@@ -221,41 +219,38 @@ main#content div.createEventDiv {
     max-width: 300px;
     margin: auto;
     display: block; }
-  main#content div.createEventDiv div.wrapper2 {
-    box-sizing: border-box;
-    overflow: hidden;
+  main#content div.createEventDiv form.addEventForm div.wrapper2 {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around; }
-    main#content div.createEventDiv div.wrapper2 div.field {
-      flex-basis: 48%;
+    main#content div.createEventDiv form.addEventForm div.wrapper2 div.field {
+      flex-basis: 45%;
       text-align: center;
       display: flex;
       flex-wrap: wrap; }
-      main#content div.createEventDiv div.wrapper2 div.field .flex-item {
+      main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item {
         margin: 10px; }
-      main#content div.createEventDiv div.wrapper2 div.field .flex-item1 {
+      main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item1 {
         order: 3;
         width: 100%; }
-      main#content div.createEventDiv div.wrapper2 div.field .flex-item2 {
+      main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item2 {
         font-weight: bold;
         letter-spacing: 2px;
         text-align: center;
         order: 1;
         width: 100%; }
-      main#content div.createEventDiv div.wrapper2 div.field .flex-item3 {
+      main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 {
         width: 100%;
         order: 2; }
-        main#content div.createEventDiv div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv div.wrapper2 div.field .flex-item3 select {
-          width: 100%;
+        main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 select {
+          width: 90%;
           text-align: center;
           padding: 5px;
           max-width: 250px;
           margin-left: 20px; }
-        main#content div.createEventDiv div.wrapper2 div.field .flex-item3 textarea {
-          width: 100%;
-          max-width: 100%;
+        main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 textarea {
+          width: 90%;
           padding: 10px;
           font-size: 1rem; }
 
@@ -350,12 +345,16 @@ main#content table#eventTable {
 
 @media screen and (max-width: 501px) {
   main#content {
-    width: 95%; }
-    main#content div.createEventDiv form.addEventForm p.header {
-      font-size: 1.2rem; }
-    main#content div.createEventDiv form.addEventForm div.wrapper2 div.field {
-      font-size: 14px;
-      flex-basis: 90%; }
+    width: 100%; }
+    main#content div.createEventDiv form.addEventForm {
+      width: 98%; }
+      main#content div.createEventDiv form.addEventForm p.header {
+        font-size: 1.2rem; }
+      main#content div.createEventDiv form.addEventForm div.wrapper2 div.field {
+        font-size: 14px;
+        flex-basis: 90%; }
+        main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 select {
+          margin-left: 0px; }
     main#content table#eventTable {
       width: 100%;
       border-spacing: 0 3rem; }
@@ -395,6 +394,15 @@ main#content table#eventTable {
           margin-right: 15px; } }
 
 @media screen and (max-width: 768px) {
+  main#content div.createEventDiv form.addEventForm {
+    width: 98%; }
+    main#content div.createEventDiv form.addEventForm p.header {
+      font-size: 1.2rem; }
+    main#content div.createEventDiv form.addEventForm div.wrapper2 div.field {
+      flex-basis: 100%;
+      font-size: 14px; }
+      main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 select {
+        margin-left: 0px; }
   main#content table#eventTable {
     width: 100%;
     border-spacing: 0 3rem; }

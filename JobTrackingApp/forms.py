@@ -52,7 +52,18 @@ class SearchForm(forms.Form):
 
 class EventForm(ModelForm):
     date = forms.DateField(
-        required=True, widget=forms.widgets.DateTimeInput(attrs={"type": "date"})
+        required=True,
+        widget=forms.widgets.DateTimeInput(
+            attrs={"type": "date", "placeholder": "mm/dd/yyyy"}
+        ),
+        error_messages={
+            "invalid": "Enter a valid date. 'mm/dd/yyyy'",
+        },
+    )
+
+    duration = forms.CharField(
+        required=False,
+        widget=forms.widgets.TextInput(attrs={"placeholder": "example: 2h45min"}),
     )
 
     class Meta:
