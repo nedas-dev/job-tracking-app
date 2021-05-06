@@ -45,5 +45,5 @@ if (sidebarLiElement) {
 
 let errorList = document.querySelector('ul.errorlist');
 if (errorList) {
-    document.querySelector('div.createClientDiv').style.display = "block";
+    document.querySelector('div.createEventDiv').style.display = "block";
 }

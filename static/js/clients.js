@@ -94,3 +94,8 @@ if (sidebarLiElement) {
     sidebarLiElement.style.backgroundColor = 'rgb(177, 229, 242)';
     sidebarLiElement.style.color = 'black';
 }
+
+let errorList = document.querySelector('ul.errorlist');
+if (errorList) {
+    document.querySelector('div.createClientDiv').style.display = "block";
+}
