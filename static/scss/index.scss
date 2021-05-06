@@ -52,7 +52,6 @@ main#content{
                 }
 
                 .flex-item3{
-                    text-align: center;
                     input, select{
                         width: 90%;
                         text-align: center;
@@ -67,12 +66,6 @@ main#content{
                     }
                     width: 100%;
                     order: 2;
-                    input[type="date"]
-                    {
-                        -webkit-appearance: text;
-                        -moz-appearance: text;
-                        text-align: center;
-                    }
                 }
             }
         }
