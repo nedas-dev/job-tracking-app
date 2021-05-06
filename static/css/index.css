@@ -256,7 +256,8 @@ main#content div.createEventDiv {
         main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input[type="date"] {
           -webkit-appearance: textfield;
           -moz-appearance: textfield;
-          min-height: 1.2em; }
+          min-height: 1.2em;
+          text-align: center; }
 
 main#content div.wrapper {
   margin: 1rem auto 2rem auto;
