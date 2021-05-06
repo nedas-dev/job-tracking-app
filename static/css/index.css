@@ -241,7 +241,7 @@ main#content div.createEventDiv {
         order: 1;
         width: 100%; }
       main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 {
-        width: 100%;
+        width: 99.99%;
         order: 2; }
         main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 select {
           width: 90%;
