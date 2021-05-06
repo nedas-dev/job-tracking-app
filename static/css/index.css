@@ -241,6 +241,7 @@ main#content div.createEventDiv {
         order: 1;
         width: 100%; }
       main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 {
+        text-align: center;
         width: 100%;
         order: 2; }
         main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 select {
@@ -254,9 +255,8 @@ main#content div.createEventDiv {
           padding: 10px;
           font-size: 1rem; }
         main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input[type="date"] {
-          -webkit-appearance: textfield;
-          -moz-appearance: textfield;
-          min-height: 1.2em;
+          -webkit-appearance: text;
+          -moz-appearance: text;
           text-align: center; }
 
 main#content div.wrapper {
