@@ -1,4 +1,5 @@
 @import 'base';
+$border-color: rgb(176, 176, 176);
 
 main#content{
     div.createEventDiv{
@@ -205,6 +206,9 @@ main#content{
                                 margin-left: 0px;
                             }
                         }
+                        .flex-item{
+                            margin: 5px 0px;
+                        }
                     }
                 }
             }
@@ -282,6 +286,9 @@ main#content{
                                 margin-left: 0px;
                             }
                         }
+                        .flex-item{
+                            margin: 5px 0px;
+                        }
                     }
                 }
             }
@@ -316,8 +323,8 @@ main#content{
                 text-align: right;
                 font-size: 1rem;
                 border: 1px solid rgb(240, 240, 240);
-                border-left: 2px solid grey;
-                border-right: 2px solid grey;
+                border-left: 2px solid $border-color;
+                border-right: 2px solid $border-color;
                 &.job-description{
                     white-space: break-spaces;
                     text-align: right;
@@ -333,10 +340,10 @@ main#content{
                     }
                 }
                 &:first-child{
-                    border-top: 2px solid grey;
+                    border-top: 2px solid $border-color;
                 }
                 &:last-child{
-                    border-bottom: 2px solid grey;
+                    border-bottom: 2px solid $border-color;
                 }
             }
 

@@ -1,5 +1,5 @@
 @import 'base';
-
+$border-color: rgb(176, 176, 176);
 main{
     div.createClientDiv{
         box-sizing: border-box;
@@ -194,6 +194,14 @@ main{
                     text-align: right;
                     border: 1px solid rgb(240, 240, 240);
                     max-width: 501px;
+                    border-left: 2px solid $border-color;
+                    border-right: 2px solid $border-color;
+                    &:first-child{
+                        border-top: 2px solid $border-color;
+                    }
+                    &:last-child{
+                        border-bottom: 2px solid $border-color;
+                    }
                 }
     
                 td::before{
@@ -244,6 +252,7 @@ main{
                         animation: none;
                     }
                 }
+
             }
             
             td{
@@ -254,6 +263,8 @@ main{
                 text-align: right;
                 font-size: 1rem;
                 border: 1px solid rgb(240, 240, 240);
+                border-left: 2px solid $border-color;
+                border-right: 2px solid $border-color;
                 a{
                     &.edit{
                         i.fa-edit{
@@ -264,6 +275,12 @@ main{
                             text-align: left;
                         }
                     }
+                }
+                &:first-child{
+                    border-top: 2px solid $border-color;
+                }
+                &:last-child{
+                    border-bottom: 2px solid $border-color;
                 }
                 
             }

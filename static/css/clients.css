@@ -350,7 +350,13 @@ main p.not-found {
           display: block;
           text-align: right;
           border: 1px solid #f0f0f0;
-          max-width: 501px; }
+          max-width: 501px;
+          border-left: 2px solid #b0b0b0;
+          border-right: 2px solid #b0b0b0; }
+          main table#clientsTable tr td:first-child {
+            border-top: 2px solid #b0b0b0; }
+          main table#clientsTable tr td:last-child {
+            border-bottom: 2px solid #b0b0b0; }
         main table#clientsTable tr td::before {
           content: attr(data-name);
           float: left;
@@ -379,13 +385,19 @@ main p.not-found {
       display: block;
       text-align: right;
       font-size: 1rem;
-      border: 1px solid #f0f0f0; }
+      border: 1px solid #f0f0f0;
+      border-left: 2px solid #b0b0b0;
+      border-right: 2px solid #b0b0b0; }
       main table#clientsTable td a.edit i.fa-edit {
         padding-right: 10px;
         color: grey;
         font-size: 20px;
         visibility: visible;
         text-align: left; }
+      main table#clientsTable td:first-child {
+        border-top: 2px solid #b0b0b0; }
+      main table#clientsTable td:last-child {
+        border-bottom: 2px solid #b0b0b0; }
     main table#clientsTable td::before {
       content: attr(data-name);
       float: left;

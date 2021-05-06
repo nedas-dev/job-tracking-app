@@ -355,6 +355,8 @@ main#content table#eventTable {
         flex-basis: 90%; }
         main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 select {
           margin-left: 0px; }
+        main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item {
+          margin: 5px 0px; }
     main#content table#eventTable {
       width: 100%;
       border-spacing: 0 3rem; }
@@ -403,6 +405,8 @@ main#content table#eventTable {
       font-size: 14px; }
       main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item3 select {
         margin-left: 0px; }
+      main#content div.createEventDiv form.addEventForm div.wrapper2 div.field .flex-item {
+        margin: 5px 0px; }
   main#content table#eventTable {
     width: 100%;
     border-spacing: 0 3rem; }
@@ -421,8 +425,8 @@ main#content table#eventTable {
       text-align: right;
       font-size: 1rem;
       border: 1px solid #f0f0f0;
-      border-left: 2px solid grey;
-      border-right: 2px solid grey; }
+      border-left: 2px solid #b0b0b0;
+      border-right: 2px solid #b0b0b0; }
       main#content table#eventTable td.job-description {
         white-space: break-spaces;
         text-align: right;
@@ -435,9 +439,9 @@ main#content table#eventTable {
           font-size: 20px;
           visibility: visible; }
       main#content table#eventTable td:first-child {
-        border-top: 2px solid grey; }
+        border-top: 2px solid #b0b0b0; }
       main#content table#eventTable td:last-child {
-        border-bottom: 2px solid grey; }
+        border-bottom: 2px solid #b0b0b0; }
     main#content table#eventTable td::before {
       color: black;
       content: attr(data-name);
