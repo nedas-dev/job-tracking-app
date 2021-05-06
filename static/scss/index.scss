@@ -66,12 +66,12 @@ main#content{
                     }
                     width: 100%;
                     order: 2;
-                    // input[type="date"]
-                    // {
-                    //     -webkit-appearance: textfield;
-                    //     -moz-appearance: textfield;
-                    //     min-height: 1.2em;
-                    // }
+                    input[type="date"]
+                    {
+                        -webkit-appearance: textfield;
+                        -moz-appearance: textfield;
+                        min-height: 1.2em;
+                    }
                 }
             }
         }
