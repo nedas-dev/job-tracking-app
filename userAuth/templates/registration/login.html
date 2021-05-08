@@ -1,5 +1,12 @@
 {% extends "JobTrackingApp/base.html" %}
 
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock css %}
+
 {% block content %}
     {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
@@ -26,11 +33,11 @@
                 <td>{{ form.password }}</td>
             </tr>
         </table>
-        <input type="submit" value="login" />
+        <input class="button" type="submit" value="login" />
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
 
     {# Assumes you setup the password_reset view in your URLconf #}
-    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    <p class="lost"><a href="{% url 'password_reset' %}">Forgot password?</a></p>
 
 {% endblock %}

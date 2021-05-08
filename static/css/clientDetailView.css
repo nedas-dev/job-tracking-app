@@ -260,12 +260,12 @@ main div.updateClientDiv {
       flex-direction: row;
       justify-content: space-around; }
       main div.updateClientDiv form.updateClientForm div.buttonContainer input {
-        flex-basis: 25%; }
+        flex-basis: 40%; }
         main div.updateClientDiv form.updateClientForm div.buttonContainer input:hover {
           background-color: green;
           color: white; }
       main div.updateClientDiv form.updateClientForm div.buttonContainer a.button {
-        flex-basis: 25%;
+        flex-basis: 20%;
         margin-top: 1.4rem;
         font-size: 14px;
         color: white; }

@@ -67,14 +67,14 @@ main{
                 flex-direction: row;
                 justify-content: space-around;
                 input{
-                    flex-basis: 25%;
+                    flex-basis: 40%;
                     &:hover{
                         background-color: green;
                         color: white;
                     }
                 }
                 a.button{
-                    flex-basis: 25%;
+                    flex-basis: 20%;
                     margin-top: 1.4rem;
                     font-size: 14px;
                     color: white;

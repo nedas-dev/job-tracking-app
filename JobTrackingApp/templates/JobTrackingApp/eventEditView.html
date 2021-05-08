@@ -18,7 +18,10 @@
                     </div>
                 {% endfor %}
             </div>
-            <input class="button" type="submit" value="Update">
+            <div class="buttonContainer">
+                <input class="button" type="submit" value="Update">
+                <a class="button" href="{% url 'deleteEvent' pk %}">Delete event</a>
+            </div>
         </form>
     </div>
 {% endblock content %}

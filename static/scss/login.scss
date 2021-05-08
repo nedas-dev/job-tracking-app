@@ -1,0 +1,33 @@
+@import 'base';
+
+main#content{
+    .button{
+        max-width: 200px;
+    }
+    form{
+        box-shadow: 1px 1px 8px 1px grey;
+        margin-top: 2rem auto 1rem auto;
+        border: 1px solid black;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 10px;
+        table{
+            margin:auto;
+            padding: 15px;
+            td{
+                padding: 5px;
+                text-align: left;
+                input{
+                    padding: 5px;
+                }
+            }
+        }
+    }
+    p{
+        text-align: center;
+        color: red;
+    }
+    p.lost{
+        color: dodgerblue;
+    }
+}

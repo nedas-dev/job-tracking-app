@@ -19,10 +19,28 @@ main#content{
             background-color: $special-pink;
             border-radius: 5px;
         }
-        input.button{
-            max-width: 300px;
-            margin: auto;
-            display: block;
+        div.buttonContainer{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            input{
+                flex-basis: 40%;
+                &:hover{
+                    background-color: green;
+                    color: white;
+                }
+            }
+            a.button{
+                text-align: center;
+                flex-basis: 20%;
+                font-size: 14px;
+                color: white;
+                &:hover{
+                    background-color: red;
+                    color: white;
+                }
+            }
         }
         div.wrapper2{
             box-sizing: border-box;

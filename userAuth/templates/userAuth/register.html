@@ -1,10 +1,13 @@
 {% extends 'JobTrackingApp/base.html' %}
 {% load static %}
-
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock css %}
 {% block content %}
+
 <form method="POST" action="{% url 'register' %}">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{form.as_p}}
     <input type="submit" value="Submit">'
 </form>
 {% endblock content %}

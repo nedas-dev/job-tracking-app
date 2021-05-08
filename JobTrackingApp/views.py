@@ -75,8 +75,36 @@ def editEvent(request, pk):
             return redirect(reverse("index"))
         else:
             context["eventForm"] = eventForm
-
+    context["pk"] = pk
     return render(request, "JobTrackingApp/eventEditView.html", context)
+
+
+@login_required
+def deleteEvent(request, pk):
+    eventObj = ScheduleEvent.objects.filter(client__user=request.user).filter(pk=pk)
+
+    object_exists = eventObj.exists()
+    if object_exists:
+        context = {"event_obj": eventObj[0]}
+    else:
+        return HttpResponseNotFound("Something went wrong")
+
+    if (
+        request.method == "POST"
+        and object_exists
+        and request.POST.get("action") == "Yes"
+    ):
+        eventObj[0].delete()
+        messages.success(request, f"You have successfully deleted an event!")
+        return redirect(reverse("index"))
+    elif (
+        request.method == "POST"
+        and object_exists
+        and request.POST.get("action") == "No"
+    ):
+        return redirect(reverse("editEvent", args=[pk]))
+
+    return render(request, "JobTrackingApp/eventDeleteView.html", context=context)
 
 
 @login_required
