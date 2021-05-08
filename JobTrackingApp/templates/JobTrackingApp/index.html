@@ -4,7 +4,7 @@
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock css %}
-{% block title %} <title> Schedule Tracker - Events </title> {% endblock title %}
+{% block title %} <title> STracker - Events </title> {% endblock title %}
 {% block content %}
     {% if request.user.is_authenticated %}
         <div class="wrapper">
@@ -53,6 +53,10 @@
                     <td data-name="Address">{{event.client.address}}</td>
                     <td data-name="Job Description" class="job-description">{{event.description}}</td>
                 </tr>
+            {% empty %}
+            <tr>
+            <td class="red" colspan="5">New to Schedule Tracker? Before you can create an event you have to create a client! </td>
+            </tr>
             {% endfor %}
         </table>
         {% if is_paginated %}

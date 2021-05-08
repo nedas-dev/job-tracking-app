@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+.invalid-feedback {
+  color: red; }
+
 ul.messages {
   list-style-type: none;
   margin: 0;
@@ -66,6 +69,7 @@ ul.errorlist {
     font-size: 14px; }
 
 .button {
+  -webkit-appearance: none;
   padding: 5px;
   width: 100%;
   border-radius: 5px;
@@ -219,10 +223,24 @@ main#content div.createEventDiv {
     text-align: center;
     background-color: #f28c98;
     border-radius: 5px; }
-  main#content div.createEventDiv input.button {
-    max-width: 300px;
-    margin: auto;
-    display: block; }
+  main#content div.createEventDiv div.buttonContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    main#content div.createEventDiv div.buttonContainer input {
+      flex-basis: 40%; }
+      main#content div.createEventDiv div.buttonContainer input:hover {
+        background-color: green;
+        color: white; }
+    main#content div.createEventDiv div.buttonContainer a.button {
+      text-align: center;
+      flex-basis: 20%;
+      font-size: 14px;
+      color: white; }
+      main#content div.createEventDiv div.buttonContainer a.button:hover {
+        background-color: red;
+        color: white; }
   main#content div.createEventDiv div.wrapper2 {
     box-sizing: border-box;
     overflow: hidden;

@@ -37,7 +37,7 @@
                 <li class="item index"><a href="{% url 'index' %}">
                     Events</a></li>
                 <li class="item clients"><a href="{% url 'clients' %}">Clients</a></li>
-                <li class="item profile"><a href="{% url 'index' %}">Profile<br/> settings</a></li>
+                {% comment %} <li class="item profile"><a href="{% url 'index' %}">Profile<br/> settings</a></li> {% endcomment %}
             </ul>
         </div>
     </nav>
@@ -59,6 +59,7 @@
     </main>
     <script src="{% static 'js/base.js'%}"></script>
     {% block javascript %} {% endblock javascript %}
+
 </body>
 
 </html>
