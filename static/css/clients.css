@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 .invalid-feedback {
-  color: red; }
+  color: red;
+}
 
 ul.messages {
   list-style-type: none;
@@ -9,30 +10,37 @@ ul.messages {
   width: 100%;
   position: sticky;
   top: 60px;
-  z-index: 1; }
-  ul.messages li {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 1px; }
-    ul.messages li p {
-      display: inline;
-      position: absolute;
-      margin: 0;
-      right: 7px;
-      top: 7px; }
-  ul.messages li.success {
-    background-color: #29ce29;
-    color: black; }
-  ul.messages li.warning {
-    background-color: red;
-    color: white; }
+  z-index: 1;
+}
+ul.messages li {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 1px;
+}
+ul.messages li p {
+  display: inline;
+  position: absolute;
+  margin: 0;
+  right: 7px;
+  top: 7px;
+}
+ul.messages li.success {
+  background-color: #29ce29;
+  color: black;
+}
+ul.messages li.warning {
+  background-color: red;
+  color: white;
+}
 
 a, a:visited {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ul {
-  padding: 0px; }
+  padding: 0px;
+}
 
 a.page-number {
   padding: 5px 10px;
@@ -41,10 +49,12 @@ a.page-number {
   background-color: #b1e5f2;
   cursor: pointer;
   text-align: center;
-  margin: 3px; }
-  a.page-number:hover {
-    background-color: #f28c98;
-    color: white; }
+  margin: 3px;
+}
+a.page-number:hover {
+  background-color: #f28c98;
+  color: white;
+}
 
 a.current-page-number {
   padding: 5px 10px;
@@ -54,7 +64,8 @@ a.current-page-number {
   color: white;
   cursor: pointer;
   text-align: center;
-  margin: 3px; }
+  margin: 3px;
+}
 
 ul.errorlist {
   padding: 2px 5px 2px 5px;
@@ -63,10 +74,12 @@ ul.errorlist {
   margin: 0px auto 0px auto;
   color: black;
   list-style-type: square;
-  border: none; }
-  ul.errorlist li {
-    color: red;
-    font-size: 14px; }
+  border: none;
+}
+ul.errorlist li {
+  color: red;
+  font-size: 14px;
+}
 
 .button {
   -webkit-appearance: none;
@@ -76,14 +89,17 @@ ul.errorlist {
   cursor: pointer;
   background-color: #919191;
   color: white;
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: "Balsamiq Sans", cursive;
   letter-spacing: 2px;
-  border: 2px solid #7e7e7e; }
-  .button:hover {
-    color: #919191;
-    background-color: white; }
-  .button:active, .button:focus {
-    outline: none; }
+  border: 2px solid #7e7e7e;
+}
+.button:hover {
+  color: #919191;
+  background-color: white;
+}
+.button:active, .button:focus {
+  outline: none;
+}
 
 .exit {
   border: 1px solid #7e7e7e;
@@ -91,109 +107,134 @@ ul.errorlist {
   width: 17px;
   display: block;
   border-radius: 50%;
-  background-color: #919191; }
-  .exit:hover {
-    color: #919191;
-    background-color: white;
-    cursor: pointer; }
+  background-color: #919191;
+}
+.exit:hover {
+  color: #919191;
+  background-color: white;
+  cursor: pointer;
+}
 
 body {
   margin: 0px;
   padding: 0px;
   background-color: #e8e8e8;
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 nav#navbar {
   background-color: #393838;
   padding: 20px 10px 20px 10px;
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: "Balsamiq Sans", cursive;
   color: white;
   z-index: 3;
   position: sticky;
   top: 0;
-  width: 100%; }
-  nav#navbar div.menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
-    nav#navbar div.menu div#sidebar-icon {
-      width: 20px;
-      height: 15px;
-      margin-left: 5px;
-      cursor: pointer; }
-      nav#navbar div.menu div#sidebar-icon span.side-bar-container {
-        width: inherit;
-        height: inherit;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; }
-        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar {
-          height: 3px;
-          width: 100%;
-          background-color: #b1e5f2;
-          border-radius: 3px;
-          transition: all 0.3s ease-in-out; }
-        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar1 {
-          transform: translateY(4px) rotate(45deg); }
-        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar2 {
-          visibility: hidden;
-          transition: visibility 0.1s; }
-        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar3 {
-          transform: translateY(-8px) rotate(-45deg); }
-      nav#navbar div.menu div#sidebar-icon:hover span.side-bar-container div.sidebar {
-        background-color: white; }
-    nav#navbar div.menu div#logo {
-      color: #f28c98;
-      flex: 2;
-      text-align: start;
-      padding-left: 5%; }
-      nav#navbar div.menu div#logo:hover {
-        animation: changeColors 2s forwards; }
-      nav#navbar div.menu div#logo span {
-        color: #b1e5f2; }
-      nav#navbar div.menu div#logo img#clock {
-        width: 15px; }
-
+  width: 100%;
+}
+nav#navbar div.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+nav#navbar div.menu div#sidebar-icon {
+  width: 20px;
+  height: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar {
+  height: 3px;
+  width: 100%;
+  background-color: #b1e5f2;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar1 {
+  transform: translateY(4px) rotate(45deg);
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar2 {
+  visibility: hidden;
+  transition: visibility 0.1s;
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
+nav#navbar div.menu div#sidebar-icon:hover span.side-bar-container div.sidebar {
+  background-color: white;
+}
+nav#navbar div.menu div#logo {
+  color: #f28c98;
+  flex: 2;
+  text-align: start;
+  padding-left: 5%;
+}
+nav#navbar div.menu div#logo:hover {
+  animation: changeColors 2s forwards;
+}
+nav#navbar div.menu div#logo span {
+  color: #b1e5f2;
+}
+nav#navbar div.menu div#logo img#clock {
+  width: 15px;
+}
 @keyframes changeColors {
   50% {
-    color: white; }
+    color: white;
+  }
   100% {
-    color: #f28c98; } }
-    nav#navbar div.menu div#login, nav#navbar div.menu div#register, nav#navbar div.menu div#logout {
-      flex: 1;
-      text-align: center; }
-    nav#navbar div.menu div#login a:hover, nav#navbar div.menu div#logout a:hover, nav#navbar div.menu div#register a:hover {
-      color: #b1e5f2;
-      cursor: pointer; }
+    color: #f28c98;
+  }
+}
+nav#navbar div.menu div#login, nav#navbar div.menu div#register, nav#navbar div.menu div#logout {
+  flex: 1;
+  text-align: center;
+}
+nav#navbar div.menu div#login a:hover, nav#navbar div.menu div#logout a:hover, nav#navbar div.menu div#register a:hover {
+  color: #b1e5f2;
+  cursor: pointer;
+}
 
 nav#main-sidebar {
   position: fixed;
-  z-index: 2; }
-  nav#main-sidebar div.sidebar-container {
-    transform: translate(-200px);
-    background-color: #393838;
-    color: white;
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    transition: transform 0.3s ease-in-out;
-    top: 0;
-    left: 0; }
-    nav#main-sidebar div.sidebar-container ul#sidebar-ul {
-      margin-top: 6rem;
-      list-style-type: none;
-      list-style-position: outside;
-      font-size: 16px;
-      padding-left: 0px; }
-      nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item {
-        margin-left: 10px;
-        margin: 2rem;
-        padding: 5px;
-        border-radius: 5px; }
-        nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item:hover {
-          background-color: white;
-          color: black;
-          cursor: pointer; }
+  z-index: 2;
+}
+nav#main-sidebar div.sidebar-container {
+  transform: translate(-200px);
+  background-color: #393838;
+  color: white;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  transition: transform 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+}
+nav#main-sidebar div.sidebar-container ul#sidebar-ul {
+  margin-top: 6rem;
+  list-style-type: none;
+  list-style-position: outside;
+  font-size: 16px;
+  padding-left: 0px;
+}
+nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item {
+  margin-left: 10px;
+  margin: 2rem;
+  padding: 5px;
+  border-radius: 5px;
+}
+nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
 
 main {
   padding: 5px;
@@ -204,7 +245,8 @@ main {
   position: relative;
   z-index: 0;
   overflow: hidden;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 main div.createClientDiv {
   box-sizing: border-box;
@@ -213,200 +255,245 @@ main div.createClientDiv {
   top: 200px;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: black; }
-  main div.createClientDiv form.addClientForm {
-    position: relative;
-    background-color: #f28c98;
-    background-image: linear-gradient(#ededed, #dfdfdf);
-    width: 280px;
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 5px 5px 10px #9a9a9a;
-    border: 1px solid black; }
-    main div.createClientDiv form.addClientForm p.formExit {
-      position: absolute;
-      text-align: center;
-      top: -10px;
-      right: 5px; }
-    main div.createClientDiv form.addClientForm input {
-      text-align: center;
-      padding: 5px;
-      width: 90%; }
-      main div.createClientDiv form.addClientForm input.button {
-        margin-top: 0.7rem;
-        margin-bottom: 0.7rem; }
-
+  color: black;
+}
+main div.createClientDiv form.addClientForm {
+  position: relative;
+  background-color: #f28c98;
+  background-image: linear-gradient(#ededed, #dfdfdf);
+  width: 280px;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px #9a9a9a;
+  border: 1px solid black;
+}
+main div.createClientDiv form.addClientForm p.formExit {
+  position: absolute;
+  text-align: center;
+  top: -10px;
+  right: 5px;
+}
+main div.createClientDiv form.addClientForm input {
+  text-align: center;
+  padding: 5px;
+  width: 90%;
+}
+main div.createClientDiv form.addClientForm input.button {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
 main div.wrapper {
   margin: 1rem auto 2rem auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
-  border-bottom: 3px solid grey; }
-  main div.wrapper div {
-    margin-bottom: 1rem; }
-  main div.wrapper div.search {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row; }
-    main div.wrapper div.search input {
-      padding: 5px;
-      border-radius: 5px; }
-      main div.wrapper div.search input.button {
-        width: 70px; }
-      main div.wrapper div.search input#id_query {
-        min-width: 70px;
-        max-width: 175px; }
-  main div.wrapper div.features button.addClient {
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer; }
-
+  border-bottom: 3px solid grey;
+}
+main div.wrapper div {
+  margin-bottom: 1rem;
+}
+main div.wrapper div.search {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+main div.wrapper div.search input {
+  padding: 5px;
+  border-radius: 5px;
+}
+main div.wrapper div.search input.button {
+  width: 70px;
+}
+main div.wrapper div.search input#id_query {
+  min-width: 70px;
+  max-width: 175px;
+}
+main div.wrapper div.features button.addClient {
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 main table#clientsTable {
   width: 100%;
   border-spacing: 0 1.5rem;
   margin-bottom: 2rem;
-  margin-top: 2rem; }
-  main table#clientsTable th {
-    text-align: center;
-    padding: 15px;
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
-    background-color: #f28c98;
-    background-color: #b1e5f2;
-    border-right: 1px solid #c9c9c9;
-    text-transform: uppercase;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: normal;
-    letter-spacing: 1px; }
-  main table#clientsTable td {
-    text-align: center;
-    padding: 2rem 12px;
-    border-bottom: 1px solid #ebebeb;
-    border-top: 1px solid #ebebeb;
-    max-width: 200px; }
-    main table#clientsTable td a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-color: inherit; }
-      main table#clientsTable td a:hover {
-        color: #020ae3;
-        text-decoration: none; }
-      main table#clientsTable td a.edit i.fa-edit {
-        padding-right: 10px;
-        color: grey;
-        font-size: 18px;
-        visibility: hidden;
-        text-align: left; }
-    main table#clientsTable td[data-name="Client name"] {
-      color: dodgerblue; }
-  main table#clientsTable tr.table-row {
-    background-color: white;
-    box-shadow: 0px 0px 9px 0px #c9c9c9; }
-    main table#clientsTable tr.table-row:hover {
-      background-color: #f9f3ed; }
-      main table#clientsTable tr.table-row:hover i.fa-edit {
-        visibility: visible;
-        cursor: pointer;
-        animation: fade-in 0.5s forwards; }
-
+  margin-top: 2rem;
+}
+main table#clientsTable th {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  background-color: #f28c98;
+  background-color: #b1e5f2;
+  border-right: 1px solid #c9c9c9;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+main table#clientsTable td {
+  text-align: center;
+  padding: 2rem 12px;
+  border-bottom: 1px solid #ebebeb;
+  border-top: 1px solid #ebebeb;
+  max-width: 200px;
+}
+main table#clientsTable td a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: inherit;
+}
+main table#clientsTable td a:hover {
+  color: #020ae3;
+  text-decoration: none;
+}
+main table#clientsTable td a.edit i.fa-edit {
+  padding-right: 10px;
+  color: grey;
+  font-size: 18px;
+  visibility: hidden;
+  text-align: left;
+}
+main table#clientsTable td[data-name="Client name"] {
+  color: dodgerblue;
+}
+main table#clientsTable tr.table-row {
+  background-color: white;
+  box-shadow: 0px 0px 9px 0px #c9c9c9;
+}
+main table#clientsTable tr.table-row:hover {
+  background-color: #f9f3ed;
+}
+main table#clientsTable tr.table-row:hover i.fa-edit {
+  visibility: visible;
+  cursor: pointer;
+  animation: fade-in 0.5s forwards;
+}
 @keyframes fade-in {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 main div.paginator {
   clear: both;
   margin: auto;
   text-align: center;
-  margin: 0.5rem auto 0.1rem auto; }
-
+  margin: 0.5rem auto 0.1rem auto;
+}
 main p.not-found {
   margin-top: 3.5rem;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 10px;
   text-align: center;
-  color: red; }
+  color: red;
+}
 
 @media screen and (max-width: 501px) {
   main {
-    width: 95%; }
-    main div.createClientDiv {
-      width: 80%;
-      max-width: 280px; }
-      main div.createClientDiv form.addClientForm {
-        width: 100%; }
-    main table#clientsTable {
-      width: 100%;
-      border-spacing: 0 3rem; }
-      main table#clientsTable tr.table-header {
-        display: none; }
-      main table#clientsTable tr {
-        width: 100%;
-        margin-bottom: 5rem; }
-        main table#clientsTable tr td {
-          padding: 10px 5px;
-          overflow: hidden;
-          display: block;
-          text-align: right;
-          border: 1px solid #f0f0f0;
-          max-width: 501px;
-          border-left: 2px solid #b0b0b0;
-          border-right: 2px solid #b0b0b0; }
-          main table#clientsTable tr td:first-child {
-            border-top: 2px solid #b0b0b0; }
-          main table#clientsTable tr td:last-child {
-            border-bottom: 2px solid #b0b0b0; }
-        main table#clientsTable tr td::before {
-          content: attr(data-name);
-          float: left;
-          margin-bottom: 1rem;
-          font-weight: bold;
-          padding-right: 2rem;
-          text-transform: uppercase;
-          font-size: 12px; } }
-
-@media screen and (max-width: 768px) {
-  main div.createClientDiv form {
-    width: 95%; }
+    width: 95%;
+  }
+  main div.createClientDiv {
+    width: 80%;
+    max-width: 280px;
+  }
+  main div.createClientDiv form.addClientForm {
+    width: 100%;
+  }
   main table#clientsTable {
     width: 100%;
-    border-spacing: 0 3rem; }
-    main table#clientsTable tr.table-header {
-      display: none; }
-    main table#clientsTable tr {
-      width: 100%; }
-      main table#clientsTable tr.table-row:hover a.edit > i {
-        animation: none; }
-    main table#clientsTable td {
-      max-width: 768px;
-      padding: 10px 5px;
-      overflow: hidden;
-      display: block;
-      text-align: right;
-      font-size: 1rem;
-      border: 1px solid #f0f0f0;
-      border-left: 2px solid #b0b0b0;
-      border-right: 2px solid #b0b0b0; }
-      main table#clientsTable td a.edit i.fa-edit {
-        padding-right: 10px;
-        color: grey;
-        font-size: 20px;
-        visibility: visible;
-        text-align: left; }
-      main table#clientsTable td:first-child {
-        border-top: 2px solid #b0b0b0; }
-      main table#clientsTable td:last-child {
-        border-bottom: 2px solid #b0b0b0; }
-    main table#clientsTable td::before {
-      content: attr(data-name);
-      float: left;
-      margin-bottom: 1rem;
-      font-weight: bold;
-      padding-right: 1rem;
-      text-transform: uppercase;
-      font-size: 14px; } }
+    border-spacing: 0 3rem;
+  }
+  main table#clientsTable tr.table-header {
+    display: none;
+  }
+  main table#clientsTable tr {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  main table#clientsTable tr td {
+    padding: 10px 5px;
+    overflow: hidden;
+    display: block;
+    text-align: right;
+    border: 1px solid #f0f0f0;
+    max-width: 501px;
+    border-left: 2px solid #b0b0b0;
+    border-right: 2px solid #b0b0b0;
+  }
+  main table#clientsTable tr td:first-child {
+    border-top: 2px solid #b0b0b0;
+  }
+  main table#clientsTable tr td:last-child {
+    border-bottom: 2px solid #b0b0b0;
+  }
+  main table#clientsTable tr td::before {
+    content: attr(data-name);
+    float: left;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    padding-right: 2rem;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main div.createClientDiv form {
+    width: 95%;
+  }
+  main table#clientsTable {
+    width: 100%;
+    border-spacing: 0 3rem;
+  }
+  main table#clientsTable tr.table-header {
+    display: none;
+  }
+  main table#clientsTable tr {
+    width: 100%;
+  }
+  main table#clientsTable tr.table-row:hover a.edit > i {
+    animation: none;
+  }
+  main table#clientsTable td {
+    max-width: 768px;
+    padding: 10px 5px;
+    overflow: hidden;
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+    border: 1px solid #f0f0f0;
+    border-left: 2px solid #b0b0b0;
+    border-right: 2px solid #b0b0b0;
+  }
+  main table#clientsTable td a.edit i.fa-edit {
+    padding-right: 10px;
+    color: grey;
+    font-size: 20px;
+    visibility: visible;
+    text-align: left;
+  }
+  main table#clientsTable td:first-child {
+    border-top: 2px solid #b0b0b0;
+  }
+  main table#clientsTable td:last-child {
+    border-bottom: 2px solid #b0b0b0;
+  }
+  main table#clientsTable td::before {
+    content: attr(data-name);
+    float: left;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    padding-right: 1rem;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=clients.css.map */

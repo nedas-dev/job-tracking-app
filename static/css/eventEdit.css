@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 .invalid-feedback {
-  color: red; }
+  color: red;
+}
 
 ul.messages {
   list-style-type: none;
@@ -9,30 +10,37 @@ ul.messages {
   width: 100%;
   position: sticky;
   top: 60px;
-  z-index: 1; }
-  ul.messages li {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 1px; }
-    ul.messages li p {
-      display: inline;
-      position: absolute;
-      margin: 0;
-      right: 7px;
-      top: 7px; }
-  ul.messages li.success {
-    background-color: #29ce29;
-    color: black; }
-  ul.messages li.warning {
-    background-color: red;
-    color: white; }
+  z-index: 1;
+}
+ul.messages li {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 1px;
+}
+ul.messages li p {
+  display: inline;
+  position: absolute;
+  margin: 0;
+  right: 7px;
+  top: 7px;
+}
+ul.messages li.success {
+  background-color: #29ce29;
+  color: black;
+}
+ul.messages li.warning {
+  background-color: red;
+  color: white;
+}
 
 a, a:visited {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ul {
-  padding: 0px; }
+  padding: 0px;
+}
 
 a.page-number {
   padding: 5px 10px;
@@ -41,10 +49,12 @@ a.page-number {
   background-color: #b1e5f2;
   cursor: pointer;
   text-align: center;
-  margin: 3px; }
-  a.page-number:hover {
-    background-color: #f28c98;
-    color: white; }
+  margin: 3px;
+}
+a.page-number:hover {
+  background-color: #f28c98;
+  color: white;
+}
 
 a.current-page-number {
   padding: 5px 10px;
@@ -54,7 +64,8 @@ a.current-page-number {
   color: white;
   cursor: pointer;
   text-align: center;
-  margin: 3px; }
+  margin: 3px;
+}
 
 ul.errorlist {
   padding: 2px 5px 2px 5px;
@@ -63,10 +74,12 @@ ul.errorlist {
   margin: 0px auto 0px auto;
   color: black;
   list-style-type: square;
-  border: none; }
-  ul.errorlist li {
-    color: red;
-    font-size: 14px; }
+  border: none;
+}
+ul.errorlist li {
+  color: red;
+  font-size: 14px;
+}
 
 .button {
   -webkit-appearance: none;
@@ -76,14 +89,17 @@ ul.errorlist {
   cursor: pointer;
   background-color: #919191;
   color: white;
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: "Balsamiq Sans", cursive;
   letter-spacing: 2px;
-  border: 2px solid #7e7e7e; }
-  .button:hover {
-    color: #919191;
-    background-color: white; }
-  .button:active, .button:focus {
-    outline: none; }
+  border: 2px solid #7e7e7e;
+}
+.button:hover {
+  color: #919191;
+  background-color: white;
+}
+.button:active, .button:focus {
+  outline: none;
+}
 
 .exit {
   border: 1px solid #7e7e7e;
@@ -91,109 +107,134 @@ ul.errorlist {
   width: 17px;
   display: block;
   border-radius: 50%;
-  background-color: #919191; }
-  .exit:hover {
-    color: #919191;
-    background-color: white;
-    cursor: pointer; }
+  background-color: #919191;
+}
+.exit:hover {
+  color: #919191;
+  background-color: white;
+  cursor: pointer;
+}
 
 body {
   margin: 0px;
   padding: 0px;
   background-color: #e8e8e8;
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 nav#navbar {
   background-color: #393838;
   padding: 20px 10px 20px 10px;
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: "Balsamiq Sans", cursive;
   color: white;
   z-index: 3;
   position: sticky;
   top: 0;
-  width: 100%; }
-  nav#navbar div.menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
-    nav#navbar div.menu div#sidebar-icon {
-      width: 20px;
-      height: 15px;
-      margin-left: 5px;
-      cursor: pointer; }
-      nav#navbar div.menu div#sidebar-icon span.side-bar-container {
-        width: inherit;
-        height: inherit;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; }
-        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar {
-          height: 3px;
-          width: 100%;
-          background-color: #b1e5f2;
-          border-radius: 3px;
-          transition: all 0.3s ease-in-out; }
-        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar1 {
-          transform: translateY(4px) rotate(45deg); }
-        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar2 {
-          visibility: hidden;
-          transition: visibility 0.1s; }
-        nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar3 {
-          transform: translateY(-8px) rotate(-45deg); }
-      nav#navbar div.menu div#sidebar-icon:hover span.side-bar-container div.sidebar {
-        background-color: white; }
-    nav#navbar div.menu div#logo {
-      color: #f28c98;
-      flex: 2;
-      text-align: start;
-      padding-left: 5%; }
-      nav#navbar div.menu div#logo:hover {
-        animation: changeColors 2s forwards; }
-      nav#navbar div.menu div#logo span {
-        color: #b1e5f2; }
-      nav#navbar div.menu div#logo img#clock {
-        width: 15px; }
-
+  width: 100%;
+}
+nav#navbar div.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+nav#navbar div.menu div#sidebar-icon {
+  width: 20px;
+  height: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar {
+  height: 3px;
+  width: 100%;
+  background-color: #b1e5f2;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar1 {
+  transform: translateY(4px) rotate(45deg);
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar2 {
+  visibility: hidden;
+  transition: visibility 0.1s;
+}
+nav#navbar div.menu div#sidebar-icon span.side-bar-container div.sidebar3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
+nav#navbar div.menu div#sidebar-icon:hover span.side-bar-container div.sidebar {
+  background-color: white;
+}
+nav#navbar div.menu div#logo {
+  color: #f28c98;
+  flex: 2;
+  text-align: start;
+  padding-left: 5%;
+}
+nav#navbar div.menu div#logo:hover {
+  animation: changeColors 2s forwards;
+}
+nav#navbar div.menu div#logo span {
+  color: #b1e5f2;
+}
+nav#navbar div.menu div#logo img#clock {
+  width: 15px;
+}
 @keyframes changeColors {
   50% {
-    color: white; }
+    color: white;
+  }
   100% {
-    color: #f28c98; } }
-    nav#navbar div.menu div#login, nav#navbar div.menu div#register, nav#navbar div.menu div#logout {
-      flex: 1;
-      text-align: center; }
-    nav#navbar div.menu div#login a:hover, nav#navbar div.menu div#logout a:hover, nav#navbar div.menu div#register a:hover {
-      color: #b1e5f2;
-      cursor: pointer; }
+    color: #f28c98;
+  }
+}
+nav#navbar div.menu div#login, nav#navbar div.menu div#register, nav#navbar div.menu div#logout {
+  flex: 1;
+  text-align: center;
+}
+nav#navbar div.menu div#login a:hover, nav#navbar div.menu div#logout a:hover, nav#navbar div.menu div#register a:hover {
+  color: #b1e5f2;
+  cursor: pointer;
+}
 
 nav#main-sidebar {
   position: fixed;
-  z-index: 2; }
-  nav#main-sidebar div.sidebar-container {
-    transform: translate(-200px);
-    background-color: #393838;
-    color: white;
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    transition: transform 0.3s ease-in-out;
-    top: 0;
-    left: 0; }
-    nav#main-sidebar div.sidebar-container ul#sidebar-ul {
-      margin-top: 6rem;
-      list-style-type: none;
-      list-style-position: outside;
-      font-size: 16px;
-      padding-left: 0px; }
-      nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item {
-        margin-left: 10px;
-        margin: 2rem;
-        padding: 5px;
-        border-radius: 5px; }
-        nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item:hover {
-          background-color: white;
-          color: black;
-          cursor: pointer; }
+  z-index: 2;
+}
+nav#main-sidebar div.sidebar-container {
+  transform: translate(-200px);
+  background-color: #393838;
+  color: white;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  transition: transform 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+}
+nav#main-sidebar div.sidebar-container ul#sidebar-ul {
+  margin-top: 6rem;
+  list-style-type: none;
+  list-style-position: outside;
+  font-size: 16px;
+  padding-left: 0px;
+}
+nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item {
+  margin-left: 10px;
+  margin: 2rem;
+  padding: 5px;
+  border-radius: 5px;
+}
+nav#main-sidebar div.sidebar-container ul#sidebar-ul li.item:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
 
 main {
   padding: 5px;
@@ -204,7 +245,8 @@ main {
   position: relative;
   z-index: 0;
   overflow: hidden;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 main#content div.createEventDiv {
   display: block;
@@ -215,75 +257,96 @@ main#content div.createEventDiv {
   width: 90%;
   margin: auto;
   border: 1px solid grey;
-  border-radius: 10px; }
-  main#content div.createEventDiv p.header {
-    padding: 10px;
-    font-size: 22px;
-    letter-spacing: 2px;
-    text-align: center;
-    background-color: #f28c98;
-    border-radius: 5px; }
-  main#content div.createEventDiv div.buttonContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; }
-    main#content div.createEventDiv div.buttonContainer input {
-      flex-basis: 40%; }
-      main#content div.createEventDiv div.buttonContainer input:hover {
-        background-color: green;
-        color: white; }
-    main#content div.createEventDiv div.buttonContainer a.button {
-      text-align: center;
-      flex-basis: 20%;
-      font-size: 14px;
-      color: white; }
-      main#content div.createEventDiv div.buttonContainer a.button:hover {
-        background-color: red;
-        color: white; }
-  main#content div.createEventDiv div.wrapper2 {
-    box-sizing: border-box;
-    overflow: hidden;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; }
-    main#content div.createEventDiv div.wrapper2 div.field {
-      flex-basis: 48%;
-      text-align: center;
-      display: flex;
-      flex-wrap: wrap; }
-      main#content div.createEventDiv div.wrapper2 div.field .flex-item {
-        margin: 10px; }
-      main#content div.createEventDiv div.wrapper2 div.field .flex-item1 {
-        order: 3;
-        width: 100%; }
-      main#content div.createEventDiv div.wrapper2 div.field .flex-item2 {
-        font-weight: bold;
-        letter-spacing: 2px;
-        text-align: center;
-        order: 1;
-        width: 100%; }
-      main#content div.createEventDiv div.wrapper2 div.field .flex-item3 {
-        width: 100%;
-        order: 2; }
-        main#content div.createEventDiv div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv div.wrapper2 div.field .flex-item3 select {
-          width: 100%;
-          text-align: center;
-          padding: 5px;
-          max-width: 250px;
-          margin-left: 20px; }
-        main#content div.createEventDiv div.wrapper2 div.field .flex-item3 textarea {
-          width: 100%;
-          max-width: 100%;
-          padding: 10px;
-          font-size: 1rem; }
+  border-radius: 10px;
+}
+main#content div.createEventDiv p.header {
+  padding: 10px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-align: center;
+  background-color: #f28c98;
+  border-radius: 5px;
+}
+main#content div.createEventDiv div.buttonContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+main#content div.createEventDiv div.buttonContainer input {
+  flex-basis: 40%;
+}
+main#content div.createEventDiv div.buttonContainer input:hover {
+  background-color: green;
+  color: white;
+}
+main#content div.createEventDiv div.buttonContainer a.button {
+  text-align: center;
+  flex-basis: 20%;
+  font-size: 14px;
+  color: white;
+}
+main#content div.createEventDiv div.buttonContainer a.button:hover {
+  background-color: red;
+  color: white;
+}
+main#content div.createEventDiv div.wrapper2 {
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+main#content div.createEventDiv div.wrapper2 div.field {
+  flex-basis: 48%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+main#content div.createEventDiv div.wrapper2 div.field .flex-item {
+  margin: 10px;
+}
+main#content div.createEventDiv div.wrapper2 div.field .flex-item1 {
+  order: 3;
+  width: 100%;
+}
+main#content div.createEventDiv div.wrapper2 div.field .flex-item2 {
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  order: 1;
+  width: 100%;
+}
+main#content div.createEventDiv div.wrapper2 div.field .flex-item3 {
+  width: 100%;
+  order: 2;
+}
+main#content div.createEventDiv div.wrapper2 div.field .flex-item3 input, main#content div.createEventDiv div.wrapper2 div.field .flex-item3 select {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  max-width: 250px;
+  margin-left: 20px;
+}
+main#content div.createEventDiv div.wrapper2 div.field .flex-item3 textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
 
 @media screen and (max-width: 501px) {
   main#content {
-    width: 95%; }
-    main#content div.createEventDiv form.addEventForm p.header {
-      font-size: 1.2rem; }
-    main#content div.createEventDiv form.addEventForm div.wrapper2 div.field {
-      font-size: 14px;
-      flex-basis: 90%; } }
+    width: 95%;
+  }
+  main#content div.createEventDiv form.addEventForm p.header {
+    font-size: 1.2rem;
+  }
+  main#content div.createEventDiv form.addEventForm div.wrapper2 div.field {
+    font-size: 14px;
+    flex-basis: 90%;
+  }
+}
+
+/*# sourceMappingURL=eventEdit.css.map */

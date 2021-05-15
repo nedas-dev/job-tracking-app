@@ -47,3 +47,21 @@ let errorList = document.querySelector('ul.errorlist');
 if (errorList) {
     document.querySelector('div.createEventDiv').style.display = "block";
 }
+
+// 
+document.querySelector('select#id_sortby').addEventListener('change', (e) => {
+    let sortBy = e.target;
+    let form = sortBy.parentElement
+    window.sessionStorage.setItem('sortby', e.target.value);
+    form.submit()
+})
+
+let sortbyValue = window.sessionStorage.getItem('sortby', '-pk');
+
+Array.from(document.querySelector('select#id_sortby').children).forEach(optionEl => {
+    if (optionEl.value == sortbyValue) {
+        optionEl.selected = true;
+    } else {
+        optionEl.selected = false;
+    }
+})

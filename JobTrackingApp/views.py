@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.shortcuts import redirect, get_object_or_404
 from django.http import JsonResponse, HttpResponseNotFound
 from . import views
-from .forms import ClientForm, SearchForm, EventForm, EventFormEdit
+from .forms import ClientForm, SearchForm, EventForm, EventFormEdit, SortByForm
 from .models import Client, ScheduleEvent
 from django.core.exceptions import ValidationError
 from .validations import fix_phone_number
@@ -21,11 +21,10 @@ def index(request):
     context = {}
     query = ""
     eventForm = EventForm(user=request.user)
-
-    events = ScheduleEvent.objects.filter(client__user=request.user).order_by("-pk")
-
+    events = ScheduleEvent.objects.filter(client__user=request.user)
+    sortbyform = SortByForm(request.GET)
     searchForm = SearchForm(request.GET)
-    if request.method == "GET":
+    if request.method == "GET" and request.GET.get("action", False) == "search":
         if searchForm.is_valid() and searchForm.cleaned_data["query"]:
             data = searchForm.cleaned_data
             query = data["query"]
@@ -36,6 +35,10 @@ def index(request):
                     | Q(client__address__icontains=query)
                     | Q(work_order__icontains=query)
                 )
+    elif request.method == "GET" and request.GET.get("action", False) == "sort":
+        if sortbyform.is_valid():
+            data = sortbyform.cleaned_data
+            request.session["sortby"] = data.get("sortby", "-pk")
     elif request.method == "POST":
         eventForm = EventForm(request.user, request.POST)
         if eventForm.is_valid():
@@ -45,10 +48,13 @@ def index(request):
         else:
             eventForm = EventForm(request.user, request.POST)
 
+    events = events.order_by(f'{request.session.get("sortby", "-pk")}')
+
     page_number = request.GET.get("page", 1)
     paginator = Paginator(events, 12)
     pageList = paginator.get_page(page_number)
 
+    context["sortbyForm"] = sortbyform
     context["searchForm"] = searchForm
     context["search"] = query
     context["eventForm"] = eventForm

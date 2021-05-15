@@ -4,13 +4,16 @@
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock css %}
+
 {% block title %} <title> STracker - Events </title> {% endblock title %}
+
 {% block content %}
     {% if request.user.is_authenticated %}
         <div class="wrapper">
             <div class="search">
                 <form class="searchForm" action='' method='GET'>
                     {{ searchForm.query }}
+                    <input type="hidden" name="action" value="search">
                     <input class="button" type="submit" value="Search">
                 </form>
             </div>
@@ -18,6 +21,15 @@
             <div class="features">
                 <button class="addEvent button"> Add Event </button>
             </div>
+        </div>
+
+        <div class="sortDiv">
+            <form class="sorting" action='' method='GET'>
+                {% csrf_token %}
+                <input type="hidden" name="action" value="sort">
+                {{ sortbyForm.sortby.label_tag }}
+                {{ sortbyForm.sortby}}
+            </form>
         </div>
 
         <div class="createEventDiv">
@@ -48,7 +60,7 @@
             {% for event in page_obj %}
                 <tr class='table-row'>
                     <td data-name="Date"><a href="{% url 'editEvent' event.pk %}"><i title="Edit Event" class="far fa-edit"></i></a>{{event.date}}</td>
-                    <td data-name="Client">{{event.client.name}}</td>
+                    <td data-name="Client"><a href="{% url 'client-detail' event.client.id %}">{{event.client.name}}</a></td>
                     <td data-name="Duration">{{event.duration}}</td>
                     <td data-name="Address">{{event.client.address}}</td>
                     <td data-name="Job Description" class="job-description">{{event.description}}</td>

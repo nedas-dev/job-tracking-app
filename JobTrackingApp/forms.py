@@ -79,3 +79,19 @@ class EventFormEdit(ModelForm):
     class Meta:
         model = ScheduleEvent
         fields = ["date", "duration", "work_order", "client", "description"]
+
+
+class SortByForm(forms.Form):
+    sortby = forms.ChoiceField(
+        label="Sort by",
+        choices=[
+            ("-pk", "Last created (most recent)"),
+            ("-date", "Date (Newest to oldest)"),
+            ("date", "Date (Oldest to newest)"),
+            ("client__name", "Client name (A-Z)"),
+            ("-client__name", "Client name (Z-A)"),
+        ],
+    )
+
+    # def __init__(self, request, *args, **kwargs):
+    #     super(SortByForm, self).__init__(self, *args, **kwargs)

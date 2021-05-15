@@ -7,7 +7,7 @@ main#content{
         max-width: 700px;
         padding: 10px;
         width: 90%;
-        margin: auto;
+        margin: 1.5rem auto 1.5rem auto;
         border: 1px solid grey;
         border-radius: 10px;
         p.header{
@@ -109,15 +109,22 @@ main#content{
     }
     div.paginator{
         clear: both;
-        margin: auto;
         text-align: center;
-        margin: 0.5rem auto 0.1rem auto;
+        margin: 0.5rem auto 3rem auto;
+    }
+    div.sortDiv{
+        text-align: center;
+        label{
+            letter-spacing: 1px;
+        }
+        select{
+            padding: 5px 8px;
+        }
     }
     table#eventTable{
         width: 100%;
         border-spacing: 0 1.5rem;
         margin-bottom: 2rem;
-        margin-top: 2rem;
         box-sizing: border-box;
         overflow: hidden;
         th{
@@ -133,6 +140,19 @@ main#content{
             letter-spacing: 1px;
             color:black;
             font-weight: bold;
+            form{
+                p.sortSubmit{
+                    i{
+                        margin-left: 3px;
+                    }
+                }
+                p.sortSubmit:hover{
+                    cursor: pointer;
+                    i{
+                        color: darken(grey, 20%);
+                    }
+                }
+            }
         }
 
         td{
@@ -160,7 +180,12 @@ main#content{
                     visibility: hidden;
                 }
             }
-            
+            &[data-name="Client"]{
+                color: dodgerblue;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
         }
         
         tr.table-row{
@@ -269,7 +294,7 @@ main#content{
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     main#content{
         div.createEventDiv{
             form.addEventForm{
@@ -297,7 +322,7 @@ main#content{
         table#eventTable{
             width: 100%;
             // border-collapse: collapse;
-            border-spacing: 0 3rem;
+            border-spacing: 0 2rem;
             tr.table-header{
                 display: none;
             }
@@ -314,7 +339,6 @@ main#content{
             }
 
             td{
-            
                 max-width: 768px;
                 padding: 5px 5px;
                 padding-right: 10px;
@@ -375,7 +399,7 @@ main#content{
 }
 
 
-@media screen and (min-width:769px) and (max-width:1170px) {
+@media screen and (min-width:901px) and (max-width:1170px) {
     
 }
 
