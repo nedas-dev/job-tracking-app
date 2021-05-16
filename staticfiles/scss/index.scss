@@ -181,9 +181,18 @@ main#content{
                 }
             }
             &[data-name="Client"]{
-                color: dodgerblue;
                 &:hover{
                     text-decoration: underline;
+                    color: dodgerblue;
+                    cursor: pointer;
+                }
+            }
+            &[data-name="Address"]{
+                color: rgb(0, 0, 0);
+                &:hover{
+                    text-decoration: underline;
+                    color: dodgerblue;
+                    cursor: pointer;
                 }
             }
         }

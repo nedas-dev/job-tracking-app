@@ -62,7 +62,7 @@
                     <td data-name="Date"><a href="{% url 'editEvent' event.pk %}"><i title="Edit Event" class="far fa-edit"></i></a>{{event.date}}</td>
                     <td data-name="Client"><a href="{% url 'client-detail' event.client.id %}">{{event.client.name}}</a></td>
                     <td data-name="Duration">{{event.duration}}</td>
-                    <td data-name="Address">{{event.client.address}}</td>
+                    <td data-name="Address"><a href="http://maps.apple.com/?q={{event.client.address}}">{{event.client.address}}</a></td>
                     <td data-name="Job Description" class="job-description">{{event.description}}</td>
                 </tr>
             {% empty %}

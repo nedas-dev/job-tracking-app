@@ -412,11 +412,18 @@ main#content table#eventTable td[data-name=Date] i.fa-edit {
   font-size: 18px;
   visibility: hidden;
 }
-main#content table#eventTable td[data-name=Client] {
-  color: dodgerblue;
-}
 main#content table#eventTable td[data-name=Client]:hover {
   text-decoration: underline;
+  color: dodgerblue;
+  cursor: pointer;
+}
+main#content table#eventTable td[data-name=Address] {
+  color: black;
+}
+main#content table#eventTable td[data-name=Address]:hover {
+  text-decoration: underline;
+  color: dodgerblue;
+  cursor: pointer;
 }
 main#content table#eventTable tr.table-row {
   background-color: white;
