@@ -48,7 +48,7 @@
                     <td data-name="Client name" class="tdName"><a class="edit" href="{% url 'client-detail' client.pk %}"><i title="Edit Client Profile" class="far fa-edit"></i></a>{{ client.name }}</td>
                     <td data-name="Phone number"><a href="tel:{{ client.phone_number }}"> {{ client.phone_number }} </a></td>
                     <td data-name="Email Address"> {{ client.email_address }} </td>
-                    <td data-name="Address"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ client.address }}">{{ client.address }}</a></td>
+                    <td data-name="Address"><a target="_blank" href="http://maps.apple.com/?q={{ client.address }}">{{ client.address }}</a></td>
                 </tr>
             {% endfor %}
         {% else %}
