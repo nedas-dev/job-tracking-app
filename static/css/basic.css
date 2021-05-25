@@ -1,14 +1,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
-.errorlist {
-  border: 1px solid red;
-  padding: 5px;
-  width: 70%;
+.invalid-feedback {
+  color: red;
+}
+
+ul.messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: sticky;
+  top: 60px;
+  z-index: 1;
+}
+ul.messages li {
+  padding: 10px;
   text-align: center;
-  margin: auto;
-  list-style: none;
+  border: 1px solid black;
+  border-radius: 1px;
+}
+ul.messages li p {
+  display: inline;
+  position: absolute;
+  margin: 0;
+  right: 7px;
+  top: 7px;
+}
+ul.messages li.success {
+  background-color: #29ce29;
+  color: black;
+}
+ul.messages li.warning {
+  background-color: red;
+  color: white;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0px;
+}
+
+a.page-number {
+  padding: 5px 10px;
+  border: 1px solid #919191;
+  border-radius: 5px;
+  background-color: #b1e5f2;
+  cursor: pointer;
+  text-align: center;
+  margin: 3px;
+}
+a.page-number:hover {
+  background-color: #f28c98;
+  color: white;
+}
+
+a.current-page-number {
+  padding: 5px 10px;
+  border: 1px solid #919191;
+  border-radius: 5px;
+  background-color: #f28c98;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin: 3px;
+}
+
+ul.errorlist {
+  padding: 2px 5px 2px 5px;
+  width: 80%;
+  text-align: center;
+  margin: 0px auto 0px auto;
+  color: black;
+  list-style-type: square;
+  border: none;
+}
+ul.errorlist li {
+  color: red;
+  font-size: 14px;
 }
 
 .button {
+  -webkit-appearance: none;
   padding: 5px;
   width: 100%;
   border-radius: 5px;
@@ -41,15 +115,6 @@
   cursor: pointer;
 }
 
-a, a:visited {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  padding: 0px;
-}
-
 body {
   margin: 0px;
   padding: 0px;
@@ -62,6 +127,10 @@ nav#navbar {
   padding: 20px 10px 20px 10px;
   font-family: "Balsamiq Sans", cursive;
   color: white;
+  z-index: 3;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 nav#navbar div.menu {
   display: flex;
@@ -134,8 +203,8 @@ nav#navbar div.menu div#login a:hover, nav#navbar div.menu div#logout a:hover, n
 }
 
 nav#main-sidebar {
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  z-index: 2;
 }
 nav#main-sidebar div.sidebar-container {
   transform: translate(-200px);
@@ -145,8 +214,11 @@ nav#main-sidebar div.sidebar-container {
   height: 100vh;
   position: fixed;
   transition: transform 0.3s ease-in-out;
+  top: 0;
+  left: 0;
 }
 nav#main-sidebar div.sidebar-container ul#sidebar-ul {
+  margin-top: 6rem;
   list-style-type: none;
   list-style-position: outside;
   font-size: 16px;
@@ -171,6 +243,43 @@ main {
   margin: auto;
   background-color: white;
   position: relative;
+  z-index: 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/*# sourceMappingURL=main.css.map */
+main#content {
+  padding-top: 4rem;
+}
+main#content h1.header {
+  text-align: center;
+}
+main#content form {
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 1px 1px 8px 1px grey;
+  margin-top: 2rem auto 1rem auto;
+  border: 1px solid black;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 10px;
+}
+main#content form input {
+  padding: 5px;
+  min-width: 150px;
+  width: 250px;
+}
+main#content form ul {
+  margin-left: 1rem;
+  width: 350px;
+  font-size: 13px;
+}
+main#content form input[type=submit] {
+  margin: 1rem auto 1rem auto;
+  max-width: 200px;
+}
+main#content a {
+  color: dodgerblue;
+}
+
+/*# sourceMappingURL=basic.css.map */

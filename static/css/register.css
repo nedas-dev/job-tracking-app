@@ -248,6 +248,9 @@ main {
   box-sizing: border-box;
 }
 
+main#content {
+  padding-top: 3rem;
+}
 main#content form {
   max-width: 600px;
   margin: auto;

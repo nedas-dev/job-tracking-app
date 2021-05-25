@@ -24,6 +24,7 @@ urlpatterns = [
     path("", include("JobTrackingApp.urls")),
     path("userAuth/", include("django.contrib.auth.urls")),
     path("userAuth/register/", userViews.signup, name="register"),
+
 ]
 
 if settings.DEBUG:
